@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}OCR
+{% endblock %}
+
+{% block body %}
+
+	<div class="example-wrapper">
+		{% for message in app.flashes('error') %}
+			<div class="alert alert-danger">
+				{{ message }}
+			</div>
+		{% endfor %}
+
+		{# {{ form(form) }} #}
+	</div>
+
+    <div class="md:grid md:grid-cols-7 md:gap-6">
+      <div class="md:col-span-3">
+        <div class="px-4 text-center sm:px-0">
+          <h3 class=""> <span class="sr-only">OCR</span> <span class="block w-16 h-16 mx-auto iconify text-lime-600" data-icon="mdi:ocr"></span></h3>
+          <p class="mb-2 text-sm text-slate-200">
+            Le fichier dois etre un zip de 20Mo maximum ne comportant que des jp(e)g. 
+          </p>
+          <p class="mb-2 text-sm text-slate-200">
+            Il est préférable de bien nommer les fichier dans une ordre numérique cohérent.
+          </p>
+        </div>
+      </div>
+      <div class="mt-5 md:mt-0 md:col-span-4">
+       {{ form_start(form) }}
+          <div class="shadow sm:rounded-md sm:overflow-hidden">
+            <div class="px-4 py-5 space-y-6 bg-lime-600 sm:p-6">
+                {{ form_widget(form.attachment) }}           
+
+              </div>
+            <div class="px-4 py-3 text-right bg-slate-700 sm:px-6">
+                {{ form_widget(form.submit) }}
+            </div>
+          </div>
+        {{ form_rest(form) }}
+        {{ form_end(form) }}
+      </div>
+    </div>
+{% endblock %}

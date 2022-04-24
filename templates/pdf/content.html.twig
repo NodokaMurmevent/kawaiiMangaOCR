@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>miaou</title>
+		<style>
+			.grid {
+				display: flex;				
+				gap:50px;
+				justify-content: center;
+				align-items: center;
+			}
+			.grid > div{
+				width:49%;
+			}
+			span{
+				font-weight:600;
+			}
+			img{
+				max-height:950px;
+				width:auto;
+			}
+			p{
+				padding:0;
+				margin:0;
+			}
+		</style>
+	</head>
+	<body>
+		{# <img style="display:block; margin:15px auto; padding:15px;" src="{{ path ~ asset('build/img/logo-relance.jpg') }}" alt="Logo" height="auto" width="350px"/> #}
+
+
+		{# <h1>{{filePath}}{{fileName}}.{{extension}}</h1> #}
+		{% for p in pages %}
+		{{ path ~"/public"~ asset(p.publicPathImage) }}
+			<div class="grid">
+				<div>
+					<h2 class="pt-3 text-2xl font-semibold">Page n°{{loop.index}}</h2>
+				
+					<h2 class="pt-3 text-2xl font-semibold">Text Complet</h2>
+					<p>
+						{% for pouet in p.blocks %}
+							{{pouet}}<br/>
+						{% endfor %}
+					</p>
+					<h2 class="pt-3 text-2xl font-semibold">blocs</h2>
+						{% for pouet in p.blocks %}
+						
+						<p><span class="pt-4 text-xl font-bold">Bloc n°{{loop.index}} : </span>
+							{{pouet}}</p>
+					{% endfor %}
+				</div>
+				<div>
+					
+					<img class="m-4 shadow-lg resultimage rounded-lg" src="{{ path ~"/public"~ asset(p.publicPathImage) }}"/>
+
+				</div>
+			</div>
+			{% if loop.last == false  %}
+				<div style="page-break-before: always;"></div>
+			{% endif %}
+
+		{% endfor %}
+
+
+	</body>
+</html>

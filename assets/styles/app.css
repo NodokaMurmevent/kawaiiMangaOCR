@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "@fontsource/quicksand/300";
+@import "@fontsource/quicksand";
+@import "@fontsource/quicksand/500";
+@import "@fontsource/quicksand/600";
+@import "@fontsource/quicksand/700";
+@import "@fontsource/roboto/300";
+@import "@fontsource/roboto";
+@import "@fontsource/roboto/500";

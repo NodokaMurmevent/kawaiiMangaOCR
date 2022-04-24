@@ -1,0 +1,2 @@
+gregwar_image:
+    web_dir: "%kernel.project_dir%/public"

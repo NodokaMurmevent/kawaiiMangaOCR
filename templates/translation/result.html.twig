@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TranslationController!{% endblock %}
+
+{% block body %}
+
+<div class="container mx-auto mt-4">
+    
+    <div class="flex items-start justify-center gap-6 ">
+        <div class="p-4 rounded-md shadow-md bg-slate-50">
+            {{ original | nl2br }}
+        </div>
+        <div class="p-4 rounded-md shadow-md bg-slate-50">
+       
+            {% for trad in translated.translations %}
+                <div>{{ trad.text | nl2br }}</div>
+            {% endfor %}
+      
+        </div>
+    </div>
+
+</div>
+{% endblock %}

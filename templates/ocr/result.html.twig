@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{originalNameFile}}
+{% endblock %}
+
+{% block body %}
+
+	<div class="mb-4 text-center">
+		<h1 class="mt-4 text-4xl uppercase text-lime-500">{{originalNameFile}}</h1>
+	</div>
+
+	<div class="mb-4 text-center">
+		<a href="{{url ~ '.txt'}}" download="{{originalNameFile}}" target="_blank" class="text-xl underline transition-all text-slate-50 decoration-double decoration-pink-500 underline-offset-2 decoration-1 hover:text-pink-500 hover:no-underline">
+			Télécharger votre fichier en mode texte simple.
+		</a>
+	</div>
+
+	{% for p in pages %}
+		<div class="grid items-stretch grid-cols-1 gap-4 mb-6 lg:grid-cols-2 justify-items-stretch">
+			<h2 class="row-start-1 pt-3 text-2xl font-light text-center uppercase lg:col-span-2 text-amber-500 font-title">Page n°{{loop.index}}</h2>
+			<div class="row-start-3 lg:row-start-2">
+				<div class="p-4 mb-4 rounded-md shadow-md bg-slate-50">
+					<h2 class="text-2xl text-center uppercase font-base text-amber-500 font-title">Texte Complet</h2>
+					<p>
+						{% for pouet in p.blocks %}
+							{{pouet}}<br/>
+						{% endfor %}
+					</p>
+				</div>
+				<div class="p-4 rounded-md shadow-md bg-slate-50">
+					<h2 class="text-2xl text-center uppercase font-base text-amber-500 font-title">blocs</h2>
+					<ol class="ml-3 space-y-2 list-decimal">
+					{% for pouet in p.blocks %}					
+						<li class="px-2 py-1 rounded-md shadow-md bg-slate-100">{{pouet}}</li>						
+					{% endfor %}
+					</ol>
+				</div>
+			</div>
+			<div class="flex items-center row-start-2 p-4 bg-white rounded-md shadow-md lg:row-start-2">
+				<img src="{{ p.publicPathImage }}"/>
+			</div>
+		</div>
+	{% endfor %}
+	<div class="my-4 text-center">
+		<h2 class="text-3xl uppercase text-lime-500">Textes Condensés</h2>
+	</div>
+	<div class="grid grid-cols-1 gap-4 mb-4 text-left md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+		{% for p in pages %}
+			<div class="p-4 rounded-md shadow-md bg-slate-50">
+				<h2 class="pt-4 text-2xl font-semibold">Page n°{{loop.index}}</h2>
+				<p>
+					{% for pouet in p.blocks %}
+						{{pouet}}<br/>
+					{% endfor %}
+				</p>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

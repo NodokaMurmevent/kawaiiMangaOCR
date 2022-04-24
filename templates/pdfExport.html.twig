@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<style>
+			@page {
+				size: a4 landscape;
+			}
+		</style>
+	</head>
+	<body>
+		
+			{{filePath}}{{fileName}}.{{extension}}
+			{% for p in pages %}
+            <div style="page-break-before: always;">
+				<div class="grid items-center justify-center grid-cols-2 gap-4 mb-6">
+					<div>
+						<h2 class="pt-3 text-2xl font-semibold">Page n°{{loop.index}}</h2>
+						{% for pouet in p.blocks %}
+							<h2 class="pt-4 text-xl font-bold">Bloc n°{{loop.index}}</h2>
+							<p>
+								{{pouet}}</p>
+						{% endfor %}
+					</div>
+					<div>
+						<img class="m-4 shadow-lg resultimage rounded-lg" src="{{ p.publicPathImage }}"/>
+
+					</div>
+				</div>
+            </div>
+			{% endfor %}
+		
+	</body>
+</html>

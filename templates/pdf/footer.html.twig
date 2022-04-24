@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>FICHE de RENSEIGNEMENT PORTEUR DE PROJET</title>
+        <script>
+            /* page counter */
+            function subst() {
+                var vars = {};
+                var x = document.location.search.substring(1).split('&');
+                for (var i in x) {
+                    var z = x[i].split('=', 2);
+                    vars[z[0]] = unescape(z[1]);
+                }
+                var x = ['topage', 'page'];
+                for (var i in x) {
+                    var y = document.getElementsByClassName(x[i]);
+                    for (var j = 0; j < y.length; ++j) 
+                        y[j].textContent = vars[x[i]];
+                    }
+                }
+        </script>
+        <style>
+        table,tr{width:100%;}
+        .center{text-align:center;}
+        .right{ text-align:right;}
+        </style>
+    </head>
+    <body onload="subst()">
+        <footer>
+            <table>
+                <tr>
+                    <td style="width: 33%;">
+                        Généré le
+                        {{ "now"|date("d/m/Y") }}</td>
+                    <td style="width: 34%;" class="center">Relance Cévennes ©
+                        {{ "now"|date("Y") }}</td>
+                    <td style="width: 33%;" class="right">
+                        <span class="page"></span>/<span class="topage"></span></td>
+                </tr>
+            </table>
+        </footer>
+    </body>
+</html>
