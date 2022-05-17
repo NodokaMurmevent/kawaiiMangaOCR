@@ -58,7 +58,6 @@ class TranslationController extends AbstractController
 
             $file = $file->getContent();
             $formFields = [
-                'source_lang' => 'EN',
                 'target_lang' => 'FR',
                 'auth_key' => $this->getParameter('app.deepl_key'),
                 'formality' => 'less',
