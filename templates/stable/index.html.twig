@@ -1,0 +1,273 @@
+{% extends 'stable/base.html.twig' %}
+
+{% block title %}Another beginner guide to generate your local Waifu
+{% endblock %}
+
+{% block body %}
+
+    <article id="main_content" class="prose lg:prose-xl prose-slate dark:prose-invert prose-img:rounded-xl max-w-screen-lg mx-auto
+        prose-code:bg-slate-800 prose-code:text-slate-100 prose-code:py-0.5 prose-code:px-2 prose-code:rounded-md prose-p:text-justify
+        prose-a:text-blue-400 prose-a:underline prose-a:decoration-orange-400 prose-a:transition-all prose-a:underline-offset-1
+        hover:prose-a:text-orange-400 hover:prose-a:decoration-transparent
+        prose-code:font-mono
+        prose-h2:text-orange-400
+        prose-h3:text-purple-400
+        prose-h4:text-emerald-500        
+        ">
+        <p>A fellow buddy asked my some help for stating to create IA rather than replying to him by PM, we might as well make one more guide lol.<br/>
+        When you read this guide, don't hesitate to ask me additional questions in PM and I'll complete it. ;)</p>
+
+        <h1>Another beginner guide to generate your local Waifu</h1>
+
+        <h2>INDEX :</h2>
+           
+        <p>Where to start ? : You are here<p>
+
+        <ul>
+            <li><a href="oing.46410/post-20314681" class="link link--internal">Base to prompting and negative prompt</a></li>
+            <li><a href="oing.46410/post-20314659" class="link link--internal">txt2img</a></li>
+            <li><a href="oing.46410/post-20320234" class="link link--internal">img2img</a></li>
+            <li><a href="oing.46410/post-20314684" class="link link--internal">Upscaling</a></li>
+            <li>Inpainting <span class="text-red-500">(TODO)</span></li>
+            <li>ControlNet <span class="text-red-500">(TODO)</span></li>
+            <li>Who create your own lora <span class="text-red-500">(TODO)</span></li>
+            <li><a href="oing.46410/post-20314671" class="link link--internal">Batch generation explained</a></li>
+            <li><a href="oing.46410/post-20314598" class="link link--internal">Optimization image for internet sharing</a></li>
+            <li><a href="oing.46410/post-20314565" class="link link--internal">Best extensions to use with AUTOMATIC111 UI</a></li>
+        </ul>
+
+        <h2>STEP 1 : Your PC</h2>
+        <p>
+            First of all, you're going to need good hardware. Doing everything locally requires a very good PC. the minimum requirement is a graphics card with 8g of VRAM and an nvidia graphics card. It's possible with an AMD, but it's complicated to set up.<br>
+        </p>
+        <p>
+            Make sure you have a well-ventilated tower. Every generation, push your graphics card all the way, and also when you're generating, don't use other software that requires a lot of power, such as 3D you can just crash your PC.<br>
+        </p>
+        <h2>STEP 2 : The interface</h2>
+        <p>
+            The current reference software is created by AUTOMATIC111, which you can find on github, but you can use this modified version, which provides a better interface (i use this one) :<br/>
+            <a href="https://github.com/anapnoe/stable-diffusion-webui-ux" target="_blank" class="link link--external" rel="nofollow ugc noopener">https://github.com/anapnoe/stable-diffusion-webui-ux</a>
+        </p>
+        <p>
+            Follow the <a href="https://github.com/anapnoe/stable-diffusion-webui-ux#installation-and-running" target="_blank" class="link link--external" rel="nofollow ugc noopener">tutorial</a> carefully and you shouldn't have any problems.</p>
+
+        <h3>Optimize your install</h3>
+        <p>
+            When you install the interface, it’s not optimal. You can edit the file web-ui.bat (for windows, sh for linux  &amp; mac) and add some parameters :
+        </p>
+        <p>
+            <b>Line 6 :</b><br>
+            <code class="inline">set COMMANDLINE_ARGS= --xformers</code><br/>
+            Activate xFormers for faster image rendering. It's disabled by default because some machines don't support it.
+        </p>
+        <p>
+            <code class="inline">set COMMANDLINE_ARGS= --update-all-extensions</code><br/>
+            When you start your UI, this will automatically check if your extension needs to be updated and will download them.
+        </p>
+        <p>
+            <code class="inline">set COMMANDLINE_ARGS= --lowvram</code><br/>
+            Heavy reduction vram consumption. Perfect for graphics cards with only 4GB VRAM. Heavy reducing the rendering speed, very devastating.
+        </p>
+        <p>
+            <code class="inline">set COMMANDLINE_ARGS= --medvram</code><br/>
+            Light reduction vram consumption. Perfect for graphics cards with only 8GB VRAM. Little reducing the rendering speed.
+        </p>
+        <p>
+            <code class="inline">set COMMANDLINE_ARGS= --no-half-vae  --no-half</code><br/>
+            Sometimes, especially when you upscale, your model or VAE can return a black image. to avoid this, activate these two parameters. Consumes more vram.
+        </p>
+        <p>
+            <code class="inline">set COMMANDLINE_ARGS= --xformers --medvram  --no-half-vae  --no-half --update-all-extensions</code><br/>
+            Of course, you can activate them all together. In fact, I do.
+        </p>
+
+        <h2>STEP 3 : The differents files</h2>
+        <p>
+            <b> Models in: </b>stable-diffusion-webui\<b>models\Stable-diffusion</b>
+        </p>
+        <p>
+            <b>Embeddings/Textual Inversion in: </b>stable-diffusion-webui\<b>embeddings</b>
+        </p>
+        <p>
+            <b>Hypernetworks: </b>stable-diffusion-webui\<b>models\hypernetworks</b>
+        </p>
+        <p>
+            <b>Lora and LoCON in: </b>stable-diffusion-webui <b>\models\Lora</b>
+        </p>
+        <p>
+            <b>LyCORIS in: </b>stable-diffusion-webui\<b>models\LyCORIS</b>
+        </p>
+
+        <div class="p-4 my-4 rounded-md bg-yellow-50 not-prose">
+            <div class="flex">
+                <div class="flex-shrink-0">
+                <svg class="w-5 h-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                </svg>
+                </div>
+                <div class="ml-3">
+                <h3 class="text-sm font-medium text-yellow-800">ATTENTION !!!</h3>
+                <div class="mt-2 text-sm text-yellow-700">
+                    <p>For the <b>LyCORIS</b> files you will need an extension in AUTOMATIC111 UI :<br/>
+                    <a class="underline transition-all decoration-current hover:decoration-transparent" href="https://github.com/KohakuBlueleaf/a1111-sd-webui-lycoris" target="_blank" class="link link--external" rel="nofollow ugc noopener">https://github.com/KohakuBlueleaf/a1111-sd-webui-lycoris</a><br/>
+                    You can install this from the UI in extension → available → search.</p>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+        <p class="italic font-medium text-cyan-300">«wtf is lora ? lycoris ? cktp ? help !»</p>
+  
+        <h2>STEP 4 : Terminology</h2>
+
+        <h3>The model</h3>
+        
+        <p>To make images, only one thing is mandatory, a model file, they exist in two types. ckpt or safetensors. The second was created because the ckpt file can be full of viruses. So I strongly advise against their use.</p>
+
+        <p>Sometimes model files need to be color-corrected, to achieve this we use a VAE file. To use them with this interface it's simple: they just need to have the same name as the model file, with 
+        <code class="inline">.vae</code> at the end and put next to it. Like this :</p>
+        <ul>
+            <li>stable-diffusion-webui-ux\models\Stable-diffusion\<b class="text-pink-400">abyssorangemix3AOM3_aom3</b>.safetensors<br></li>
+            <li>stable-diffusion-webui-ux\models\Stable-diffusion\<b class="text-pink-400">abyssorangemix3AOM3_aom3<span class="text-red-300">.vae</span></b>.safetensors<br></li>
+        </ul>      
+       
+        <p>
+            If you download the model on civitai it's marked if it needs a VAE and offers it for download.
+        </p>
+        <p>
+            The model is the central element of your generation, making 98% of the rendering. It's also the one that's sensitive to your prompt.        
+        </p>
+        <p> 
+            It's up to you to choose what you like. On <a href="https://civitai.com/" target="_blank" class="link link--external" rel="nofollow ugc noopener">Civitai</a> or 
+            <a href="https://pixai.art/market" target="_blank" class="link link--external" rel="nofollow ugc noopener">Pixai</a> there's plenty to pick.</p>
+        
+        <p class="italic font-medium text-cyan-300">«Yes, but there's too much choice, I'm lost!»</p>
+
+        <p>Ok, so, start with this one : <a href="https://civitai.com/models/10028" target="_blank" class="link link--external" rel="nofollow ugc noopener">https://civitai.com/models/10028</a></p>
+        
+        <p>It’s a versatile model, you can create semi-realistic, manga or comic. Thanks to <span style="color: rgb(209, 72, 65)">ca9</span> for this idea.</p>
+
+        <h3>Some models are more specialized and can be divided into four types</h3>
+        <h4>Anime, Pseudo Realist, Realistic, Photorealistic.</h4>
+
+        <h3>And before you ask, here, some models I use.</h3>
+        <h4>2D</h4>
+
+            Hassaku: <a href="https://civitai.com/models/2583/hassaku-hentai-model" target="_blank" class="link link--external" rel="nofollow ugc noopener">https://civitai.com/models/2583/hassaku-hentai-model</a><br>
+            Pupu mix: <a href="https://civitai.com/models/79729/pupumix" target="_blank" class="link link--external" rel="nofollow ugc noopener">https://civitai.com/models/79729/pupumix</a><br>
+            ToonYou: <a href="https://civitai.com/models/30240/toonyou" target="_blank" class="link link--external" rel="nofollow ugc noopener"> https://civitai.com/models/30240/toonyou</a>
+
+        <h4>2.5D</h4>
+        
+            Tikomix: <a href="https://huggingface.co/bitshift/trunk/blob/main/tikomix3dAnimeModel_v36.safetensors" target="_blank" class="link link--external" rel="nofollow ugc noopener">https://huggingface.co/bitshift/trunk/blob/main/tikomix3dAnimeModel_v36.safetensors</a><br>
+            EastMix: <a href="https://civitai.com/models/78189/eastmix" target="_blank" class="link link--external" rel="nofollow ugc noopener">https://civitai.com/models/78189/eastmix</a><br>
+            Stym Midreal: <a href="https://huggingface.co/bitshift/trunk/blob/main/stymMidreal25DAnime_stymMidrealVers21.safetensors" target="_blank" class="link link--external" rel="nofollow ugc noopener">https://huggingface.co/bitshift/trunk/blob/main/stymMidreal25DAnime_stymMidrealVers21.safetensors</a>
+
+        <h4>Realistic</h4>
+        
+            Been Real : <a href="https://huggingface.co/bitshift/trunk/blob/main/beenrealv1.safetensors" target="_blank" class="link link--external" rel="nofollow ugc noopener">https://huggingface.co/bitshift/trunk/blob/main/beenrealv1.safetensors</a><br>
+            Ultra Stabbed Abyss : <a href="https://anonfiles.com/J6s0Hfuez5/UltraStabbedAbyss_safetensors" target="_blank" class="link link--external" rel="nofollow ugc noopener">https://anonfiles.com/J6s0Hfuez5/UltraStabbedAbyss_safetensors</a>
+
+        <h4>Photorealistic :</h4>
+
+        <div class="p-4 rounded-md bg-red-50 not-prose">
+        <div class="flex">
+            <div class="flex-shrink-0">
+            <svg class="w-5 h-5 text-red-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+            </svg>
+            </div>
+            <div class="ml-3">
+            <h3 class="text-sm font-medium text-red-800"> Never forget this :</h3>
+            <div class="mt-2 text-sm text-red-700">
+                <p>(<b>Photo</b>)REALISTIC MODELS CAN PROVOKE BAN OR LEGAL PROBLEM ON IF YOU GO TOO FAR !!</p>
+            </div>
+            </div>
+        </div>
+        </div>
+       
+
+        <h3>The overloaders :</h3>
+        
+        <p>
+            ok, you have a model who does manga, that's cool. but what if I only want images in the style of one particular mangaka? Or if I want all my renders to create characters in Japanese school swimsuits? how do I go about it? You have two options. Pray that your model knows the mangaka, or your swimsuit. Or use an "overloader" (a term invented by me).<br>
+        </p>
+        <p>
+            This overloader will bend your model towards what it was created for.
+            In theory, they're all compatible with all models, but logically an overloader that copies a mangaka will do better on a manga model.
+        </p>
+        <p>
+            There are several types of overloader "technology" : Embeddings/Textual Inversion ; Hypernetworks ; Lora and LyCORIS
+        </p>
+        <p>
+            You can use multiple overloader in same time and multiple type of overloader.
+        </p>
+        <p>
+            With automatic111 you use this like this :
+        </p>
+
+        <h4>Embeddings/Textual Inversion</h4>
+        <p>
+            Just write the file name in your prompt<br/>
+            ex : <code class="inline">(bad_prompt_version2:0.8)</code>
+        </p>
+        <h4>Hypernetworks, Lora and LyCORIS</h4>
+        <p>
+            You need to write the name and the force like this :<code class="inline">&lt;TYPE:NAME_MY_TYPE:FORCE&gt;</code><br/>
+            ex : <code class="inline">&lt;lora:u883schoolswimsuit_v15:0.2&gt;</code>
+        </p>
+        <p>
+            Some time will need some «triggers words» just read what say the creator of the overloader.
+        </p>
+        <p>
+            For the u883schoolswimsuit_v15 you need to add this in your prompt :
+            <code class="inline">wet u883 school swimsuit</code>.
+        </p>
+        <p>
+            Of course, you can mix everything together, but be careful: if you overdo it, you'll just break everything.
+        </p>
+       
+        <h4>You can categorize them in :</h4>
+
+        <ul>
+        <li>Chara: I want Megumin!</li>
+        <li>Concept: I want a slingshot swimsuit.</li>
+        <li>Style: I want here drawing by Abubu.</li>
+        </ul>
+         <p>Et voilà!</p>
+          
+        <p class="italic font-medium text-cyan-300">«WTF ?  Why so many sampler ? what i can use HEEEELP»</p>
+
+        <h3>The samplers :</h3>
+        <p>ok, we will make it simple :</p>
+        <ol>
+            <li>try <code class="inline">UniPC</code> if the face is ugly, try step 2.</li>
+            <li>Try <code class="inline">DPM++ 2M SDE Karras</code>.</li>
+            <li>if the rendering is bugged → <code class="inline">use DPM++ 2M SDE</code>.</li>
+            <li>If the rendering is still bugged → <code class="inline">Euler a</code>.</li>
+        </ol>
+        
+         <p class="italic font-medium text-cyan-300">«Sampling steps» wat is this shit ?»</p>
+        
+        <p>The more you have steps, the more you pics is qualitative</p>
+        <b>BUT!</b>
+        <p>Samplers don't all need the same number of steps to deliver the same result, and some samples are faster than others with the same number of steps.</p>
+ 
+        <ul>
+            <li>Prompt test and mass product with DPM++ 2M SDE Karras : 12 steps | Quality : 20</li>
+            <li>Prompt test and mass product with Euler a : 16 steps  | Quality : 25</li>
+            <li>Prompt test and mass product with UniPC : 12 steps  | Quality : 16</li>
+        </ul>
+
+        <h2>More tips :</h2>
+        <h3>hide useless samplers</h3>
+       
+        <h2>And after ? </h2>
+        <p>You can go to <a href="oing.46410/post-20314659" class="link link--internal">txt2img</a></p>
+             
+       <p>You can read tips for <a href="oing.46410/post-20314681" class="link link--internal">prompting</a></p>
+       <p> Or maybe did you need some <a href="oing.46410/post-20314565" class="link link--internal">extension</a></p>
+          
+  
+    </article>
+{% endblock %}
