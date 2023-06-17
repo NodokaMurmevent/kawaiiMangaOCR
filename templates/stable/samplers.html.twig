@@ -1,0 +1,34 @@
+<p class="italic font-medium text-cyan-300">«WTF ?  Why so many sampler ? what i can use HEEEELP»</p>
+
+<h2>The samplers :</h2>
+<p>ok, we will make it simple :</p>
+<p>Start with
+	<code class="inline">UniPC</code>. If the face is ugly, try :</p>
+<ol>
+	<li>
+		<code class="inline">DPM++ 2M SDE Karras</code>
+		if bad result, try next.</li>
+	<li>
+		<code class="inline">DPM++ 2M Karras</code>
+		if bad result, try next.</li>
+	<li>
+		<code class="inline">DPM++ 2M SDE</code>
+		or
+		<code class="inline">DPM++ 2M</code>
+		if the rendering is still bugged, try next.</li>
+	<li>
+		<code class="inline">Euler a</code>.</li>
+</ol>
+
+<p class="italic font-medium text-cyan-300">«Sampling steps» what is this shit ?»</p>
+
+<p>The more you have steps, the more you pics is qualitative</p>
+<b>BUT!</b>
+<p>Samplers don't all need the same number of steps to deliver the same result, and some samples are faster than others with the same number of steps.</p>
+
+<ul>
+	<li>Prompt test and mass product with DPM++ 2M SDE Karras : 12 steps | Quality render : 20</li>
+	<li>Prompt test and mass product with DPM++ 2M Karras : 12 steps | Quality render : 20</li>
+	<li>Prompt test and mass product with Euler a : 16 steps  | Quality render : 25</li>
+	<li>Prompt test and mass product with UniPC : 12 steps  | Quality render : 16</li>
+</ul>

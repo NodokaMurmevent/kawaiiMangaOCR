@@ -1,0 +1,64 @@
+<h2>Img2img</h2>
+
+<p>
+    ok, now you've done lots of txt2img and you've got an image you like, but... you'd like to do some variations, to see if you can do better.</p>
+<p>
+    To do this, you send your image to img2img and you have a button under the image you like that lets you copy the image into img2img along with its information and prompt.
+</p>
+
+<img src=" {{ asset('build/images/stable/img2img-button.png') }}" alt="hide-sampler">
+<p>
+Once you're in img2img, you're faced with numerous obscure parameters. Here's what I recommend getting started.</p>
+
+<img src=" {{ asset('build/images/stable/img2img-help.png') }}" alt="hide-sampler">
+<ol>
+    <li>let the same width and height</li>
+    <li>same sampler</li>
+    <li>same sampler step</li>
+    <li>for the batch. you know the deal</li>
+    <li>same than txt2img</li>
+    <li>It's with this parameter that you'll be able to define whether you want variations that are very similar to or very different from your original image. at 0.2 or less you'll have minor variations, at more than 0.7 images that may have nothing to do with the original image. in general, 0.5 is a good start. note that all models have different sensitivities, so it's up to you to test.</li>
+</ol>
+<p>
+    And click to generate.
+    Wait a moment and say hello to your variations :
+</p>
+
+<div class="grid items-center justify-center grid-cols-1 gap-4 text-center lg:grid-cols-2">
+    <div>
+        <h4>Original image</h4>
+        <img class="mx-auto" src=" {{ asset('build/images/stable/img2img-original.webp') }}" alt="hide-sampler">
+    </div>
+        <div><h4>Variations</h4>
+        <img class="mx-auto" src=" {{ asset('build/images/stable/img2img-variations.webp') }}" alt="hide-sampler">
+     </div>
+</div>
+
+
+	
+
+
+
+<p>
+    Of course, there's nothing to stop you from taking one of these variations, sending it to img2img with the same button just above it, and making new variations on it!
+</p>
+<h3>Important thing to know</h3>
+<p>
+    In img2img <strong>your also prompt WORK!</strong>
+</p>
+<p>
+    If you modify your prompt to change hair color or location, for example. He'll take it into account in his variations.
+    But be careful, if you want to make a real difference, you have to think about raising the denoise enough.
+</p>
+<p>
+    You can also change the model!
+</p>
+<p>
+    And after?
+</p>
+<p>
+
+    You can go to upscaling
+        
+    Or go to inpainting(TODO)
+</p>​

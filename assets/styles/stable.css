@@ -11,3 +11,15 @@
 @import "@fontsource/roboto";
 @import "@fontsource/roboto/500";
 
+
+
+.prose :where(ul > li):not(:where([class~="not-prose"] *))::marker{
+    @apply !text-white;
+}
+
+.disabled-link{
+    @apply cursor-not-allowed opacity-90;
+}
+.disabled-link a{
+    @apply no-underline pointer-events-none;
+}

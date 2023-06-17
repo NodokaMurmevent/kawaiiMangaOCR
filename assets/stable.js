@@ -14,3 +14,8 @@
 
 import './styles/stable.css';
 import Iconify from '@iconify/iconify';
+//import hljs from 'highlight.js';
+
+//document.addEventListener("DOMContentLoaded", () => {
+//   hljs.highlightAll();
+//});

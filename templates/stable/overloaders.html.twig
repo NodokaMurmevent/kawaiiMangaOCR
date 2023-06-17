@@ -1,0 +1,70 @@
+<h2>The overloaders</h2>
+
+<p>
+	Ok, you have a model who does manga, that's cool. but what if I only want images in the style of one particular mangaka? 
+</p>
+<p>
+    Or if I want all my renders to create characters in Japanese school swimsuits? How do I go about it? 
+</p>
+<p>
+    You have two options. Pray that your model knows the mangaka, or your swimsuit. <br/> Or use an "overloader" <i>(a term invented by me)</i>.
+</p>
+<p>
+	This overloader will bend your model towards what it was created for.
+</p>
+<p>
+    In theory, they're all compatible with all models, but logically an overloader that copies a mangaka will do better on a manga model.
+</p>
+<p>
+	There are several types of overloader <i>"technology"</i> :
+</p>
+<p>
+	<span class="font-semibold text-cyan-400">Embeddings/Textual Inversion</span>,
+	<span class="font-semibold text-cyan-400">Hypernetworks</span>,
+	<span class="font-semibold text-cyan-400">Lora</span>
+	and
+	<span class="font-semibold text-cyan-400">LyCORIS</span>
+</p>
+<p>
+	You can use multiple overloader in same time and multiple type of overloader.
+</p>
+
+<h3>Overloaders in automatic1111 UI</h3>
+
+<h4>Embeddings/Textual Inversion</h4>
+<p>
+	Just write the file name in your prompt :<br/>
+	<code class="inline">very_big_pasteque</code><br/>
+    For load this file: <code class="inline">stable-diffusion-webui\embeddings\very_big_pasteque.pt</code></b>
+</p>
+<h4>Hypernetworks, Lora and LyCORIS</h4>
+<p>
+	You need to write the name and the force like this :<br/><code class="inline">&lt;TYPE:THE_COMPLETE_NAME:FORCE&gt;</code><br/>
+	<strong>Ex :</strong>
+	<code class="inline">&lt;lora:u883schoolswimsuit_v15:0.2&gt;</code>
+</p>
+<p>
+	Some time will need some
+	<strong>«triggers words»</strong>
+	just read what say the creator of the overloader.
+</p>
+<p>
+	For the
+	<i>u883schoolswimsuit_v15</i>
+	you need to add this in your prompt :<br/>
+	<code class="inline">wet u883 school swimsuit</code>.
+</p>
+<p>
+	Of course, you can mix everything together, but be careful: if you overdo it, you'll just break everything.
+</p>
+
+<h4>You can categorize them in :</h4>
+
+<ul>
+	<li>Chara: I want <span class="font-semibold text-sky-400">Megumin!</span></li>
+	<li>Concept: I want a <span class="font-semibold text-lime-400">school swimsuit.</span></li>
+	<li>Style: I want here drawing by <span class="font-semibold text-orange-400">Rang Murata.</span></li>
+</ul>
+<p>Et voilà!</p>
+
+<img src=" {{ asset('build/images/stable/multiple-lora.webp') }}" alt="hide-sampler">

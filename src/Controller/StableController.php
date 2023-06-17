@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class StableController extends AbstractController
 {
-    #[Route('/stable', name: 'app_stable')]
+    #[Route('/stable-diffusion', name: 'app_stable')]
     public function index(): Response
     {
         return $this->render('stable/index.html.twig', [
