@@ -1,10 +1,10 @@
-<h2>WHO THE BATCH WORK</h2>
+<h2 id="batchExplain">Batch Size Explained</h2>
 
 <p>
     In this example, I'm assuming that the images are all 512x512. For a graphics card with 8GB of VRAM with <code>--medvram</code> enabled. Logically, if you generate larger images, you can use fewer and vice versa.
 </p>
-<h3>
-    Which is better: batch size or batch count?
+<h3 id="batchExplain_wichBetter">
+    Which is better?
 </h3>
 <p>
     Personally, I've always tried to optimize batch size. I've always found that generation is faster, especially with <code>--medvram</code> enabled. 
@@ -13,7 +13,7 @@
     In the end, without <code>--medvram</code> and with a size of 1, I don't see much difference. So to avoid unpleasant surprises, I advise you to test without <code>--medvram</code> and with a size of 1, and if your graphics card doesn't flinch, do the same. If not, set <code>--medvram</code> and increase the batch size to compensate a little.
 </p>
 
-<h4>Opinion of a friend :</h4>
+<h4 id="batchExplain_friendOpinon">Opinion from a friend</h4>
 <p>
     <i>«Regarding generating images in batches. While you're free to use whatever batch counts you want, there is rarely any reason to use batch sizes above 1 unless you're running it in the cloud. Higher batch sizes slow down each step of the generation, and the increase in generation speed is quite small compared to the strain on your computer larger batches causes.
     In my experience, you might get 10% more speed when doing a batch size of 8 but at the cost of making everything else on your computer run a lot slower.»​</i>

@@ -1,4 +1,4 @@
-<h2>UPSCALING</h2>
+<h2 id="upscaling">Upscaling</h2>
 <p class="italic font-medium text-cyan-300">«Why use an upscale in img2img rather than the upscale available in extra tab?»
 </p>
 <p>
@@ -37,20 +37,20 @@
 </p>
 <img src=" {{ asset('build/images/stable/ultimate-upscale.png') }}" alt="hide-sampler">Also important, always set the resize mode to :<img src=" {{ asset('build/images/stable/crop-resize.png') }}" alt="hide-sampler">
 
-<h3>Full example :</h3>
+<h3 id="upscaling_example">Full example</h3>
 <div class="grid items-center justify-center grid-cols-3 gap-4 text-center lg:grid-cols-6">
 	<div>
-		<h4>Starting image</h4> 
+		<h4 class="js-toc-ignore">Starting image</h4> 
 		<span>chosen from txt2img</span>
 		<img class="mx-auto" src=" {{ asset('build/images/stable/img2img-original.webp') }}" alt="hide-sampler">
 	</div>
 	<div class="col-span-2">
-		<h4>First upscale</h4>		
+		<h4 class="js-toc-ignore">First upscale</h4>		
 		<span>Denoising strength : 0.3</span>
 		<img class="mx-auto" src=" {{ asset('build/images/stable/1er-upscale.webp') }}" alt="hide-sampler">
 	</div>
 	<div class="col-span-3">
-		<h4>Second upscale</h4>
+		<h4 class="js-toc-ignore">Second upscale</h4>
 		<span>Denoising strength : 0.2</span>		
 		<img class="mx-auto" src=" {{ asset('build/images/stable/2eme-upscale.webp') }}" alt="hide-sampler">
 	</div>

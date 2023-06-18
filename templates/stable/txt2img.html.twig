@@ -1,0 +1,60 @@
+<h2 id="txt2img">TxtToImg</h2>
+
+
+<img src="{{ asset('build/images/stable/txt2img.webp') }}" alt="txt2img UI">
+<ol>
+    <li>Choose your model.</li>
+    <li>Make your prompt.</li>
+    <li>Don't forget your negative prompt.</li>
+    <li>Select a good sampler.</li>
+    <li>And an accurate number of step.</li>
+    <li>Never enable this if you use an anime or comic model (read the note below).</li>
+    <li>Don’t use this, we will upscale later, if you enable the Hires Fix all your image will be upscale.</li>
+    <li>Choose your dimension. Take care, big image will blow up your VRAM. Prefer to create smaller image, we will upscale them later. Absolute limit max : 900px</li>
+    <li>go there</li>
+    <li>go there</li>
+    <li>More you up him more your model will follow your prompt, if you lowered him, your model will be more creative. Move between 6 and 12.</li>
+    <li>The seed. If you set a fix number, and use EXACTLY, the same prompt, neg prompt, sampler etc… you will have the exactly same image.
+    <li>(TODO)</li>
+
+</ol>
+
+<h3 id="txt2img_procedure">Procedure</h3>
+
+
+<p>Start by making your prompt and taking a generic negative prompt. Lower the number of steps to 10-12 and generate a group of small images of around 512px. (you can increase the bach size if you want)</p>
+
+<p>Once you've got something more or less to your liking, increase the number of steps, let's say…20 and increase the size a little, why not 648px. Personalize your prompt and negative prompt a little more. Reduce your batch count to 2 and size to 3.</p>
+
+<p>Keep improving your prompt until a batch of images catches your eye. Save the ones you like and then send them to ImgToImg or upscaling.(TODO)</p>
+
+   
+<div class="p-4 border-l-4 border-yellow-400 bg-blue-50 not-prose">
+  <div class="flex">
+    <div class="flex-shrink-0">
+      <span class="text-2xl iconify" data-icon="noto-v1:light-bulb"></span>
+    </div>
+    <div class="ml-3">
+      <p class="text-sm text-blue-700">
+        <strong>Tips:</strong>
+         You can change the values of batch count and size following your VRAM capacity. Each Lora, LyCORIS, Hypernetwork, or Embedding you use this will increase the rendering time.
+      </p>
+    </div>
+  </div>
+</div>
+
+<h3 id="txt2img_notes">Notes</h3>
+
+<h4 id="txt2img_notes_restoreFace">The Restore Face option</h4>
+
+<p>Be careful with this parameter, it may seem practical at first glance, but in reality it can make a mess of things. It will slow down each of your generations. </p>
+
+<p>But moreover, it's going to make your faces look ultra-realistic, which can make the whole thing unsightly. What's more, it's easy enough to correct a face with a better prompt or with inPainting (TODO).</p>
+
+<p>Ho, and ultra-realist face loli are forbidden on ATF, don’t cry if you take a ban after using this.</p>
+
+<h4 id="txt2img_notes_hiresFix">Hires Fix</h4>
+
+<p>I'm not a big fan of this parameter. The reason is that you lack control and can't customize the rendering. Plus you skip the img2img step. What's more, if, like me, you have a graphics card with only 8g of ram, you can very easily exceed the limit and lose the rendering.</p>
+
+<p>However, a friend pointed out to me, it can be very practical to send a large number of images to the next generation and come back with images that have already been upscaled to good quality, thus avoiding some of the work.</p>

@@ -1,6 +1,6 @@
-<h2>PROMPTING</h2>
+<h2 id="prompting">Who to Prompt</h2>
 
-<h3>Positive Prompt <small>(or just "Prompt")</small></h3>
+<h3 id="prompting_positive">Positive Prompt <small>(or just "Prompt")</small></h3>
 <p>
 	For prompts, there are two schools of thought, which can be mixed: keyword and sentence.
 </p>
@@ -13,14 +13,14 @@
 	What do you need to use? Simple : look what the creator of your model said is better to use.
 </p>
 
-<h4>It’s totally possible to mix them. For example</h4>	
+<h4 id="prompting_positive_mix">It’s totally possible to mix them. For example</h4>	
 <pre class="not-prose"><code>(best quality, masterpiece:1.2), (2 girls running outside:1.1), blue sportwear, joyful, happy, open mouth,  sweat, (hot:1.1), sun</code></pre>
 
 <p>
 	The order of your keywords is important. The further your keyword is from the beginning, the less powerful it is.
 </p>
 
-<h4>Full typical prompt example</h4>
+<h4 id="prompting_positiv_example">Full typical prompt example</h4>
 	
 <pre class="not-prose"><code>{{'(best quality, masterpiece:1.2), 1girl, standing, solo, pose, big eyes, wide oval eyes, one eye closed, lip liner , (photoshoot studio:1.1), huge breasts, 
 skinny, skindentation, 
@@ -38,7 +38,7 @@ thick thighs, (pink luxury fashion:1.1), very dark skin, ebony,
 	<li class="leading-none text-red-500">Quality details</li>
 </ul>
 	
-<h3>Prompt Syntaxe</h3>
+<h3 id="prompting_syntaxe">Prompt Syntaxe</h3>
 
 <p class="italic font-medium text-cyan-300">«Hey I write big breast in my prompt it’s doing nothing! My waifu is flat.»</p>
 
@@ -55,9 +55,8 @@ thick thighs, (pink luxury fashion:1.1), very dark skin, ebony,
 	Use <code>(big breast:0.9)</code> will be more significant. <br/>
 	Tips : you can use a negative value. It’s rare, but some overloader support this. Referee to the notes from the creator.
 </p>
+<h3 id="prompting_negative">Negative prompt</h3>
 <p>
-	<h3>Negative prompt</h3>
-
 	The prompt lets you say what you want. The negative prompt lets you say what you don't want.
 </p>
 <p>
@@ -68,19 +67,19 @@ thick thighs, (pink luxury fashion:1.1), very dark skin, ebony,
 </p>
 
 
-<h4>Examples </h4>
+<h4 id="prompting_negative_examples">Examples </h4>
 For this positive prompt: <pre class="not-prose"><code>{{'(best quality:1.2), (masterpiece:1.2), 1 woman, clothes' | escape("html") }}</code></pre>
 
-<h5>Simple negative prompt</h5>
+<h5 id="prompting_negative_examples_simple">Simple negative prompt</h5>
 <img src=" {{ asset('build/images/stable/prompting-1.webp') }}" alt="hide-sampler">
 
-<h5>More complex negative prompt</h5>
+<h5 id="prompting_negative_examples_complex">More complex negative prompt</h5>
 <img src=" {{ asset('build/images/stable/prompting-2.webp') }}" alt="hide-sampler">
 
 Code:
 <pre class="not-prose"><code>{{'(worst quality, low quality:1.2), lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry' | escape("html") }}</code></pre>
 
-<h5>Example with some embedding </h5>
+<h5 id="prompting_negative_examples_complexeEmbeddings">Example with some embedding </h5>
 <p>The trouble with negative prompts. It's hard to know what to put in them, and they can get very long.</p>
 <p>One of the best solutions is to use negative embeddings. Think of them as keywords that embed hundreds of other keywords.</p>
 <p>For start, you can using them:</p>

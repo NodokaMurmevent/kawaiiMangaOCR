@@ -14,10 +14,11 @@
         prose-h2:text-orange-400
         prose-h3:text-purple-400
         prose-h4:text-emerald-500        
-        prose-h5:text-indigo-300      prose-h5:font-medium
+        prose-h5:text-indigo-300 prose-h5:font-medium js-toc-content
         ">
-        <h1 class="!mt-6 text-2xl text-center uppercase lg:text-3xl">Another beginner guide to generate your local Waifu</h1>
+       
         <div class="my-5 rounded-md p-7 bg-slate-600">
+        <h2 id="introduction">Introduction</h2>
             <p>
                 A fellow buddy asked my some help for stating to create IA rather than replying to him by PM, we might as well make one more guide lol.
             </p>
@@ -25,25 +26,19 @@
                 When you read this guide, don't hesitate to ask me additional questions in PM and I'll complete it. ;)
             </p>
 
-            <h2>INDEX :</h2>
-            
-            <p>Where to start ? : You are at the good place<p>
-
-            <ul>
-                <li class="disabled-link"><a href="oing.46410/post-20314681">Base to prompting and negative prompt</a></li>
-                <li class="disabled-link"><a href="oing.46410/post-20314659" >txt2img</a></li>
-                <li class="disabled-link"><a href="oing.46410/post-20320234">img2img</a></li>
-                <li class="disabled-link"><a href="oing.46410/post-20314684">Upscaling</a></li>
-                <li class="disabled-link">Inpainting <span class="text-red-500">(TODO)</span></li>
+               
+               
+{#                 <li class="disabled-link">Inpainting <span class="text-red-500">(TODO)</span></li>
                 <li class="disabled-link">ControlNet <span class="text-red-500">(TODO)</span></li>
                 <li class="disabled-link">Who create your own lora <span class="text-red-500">(TODO)</span></li>
-                <li class="disabled-link"><a href="oing.46410/post-20314671">Batch generation explained</a></li>
+        
                 <li class="disabled-link"><a href="oing.46410/post-20314598">Optimization image for internet sharing</a></li>
-                <li class="disabled-link"><a href="oing.46410/post-20314565">Best extensions to use with AUTOMATIC111 UI</a></li>
+                <li class="disabled-link"><a href="oing.46410/post-20314565">Best extensions to use with AUTOMATIC111 UI</a></li> #}
+
             </ul>
         </div>
         <div class="my-5 rounded-md p-7 bg-slate-600">
-            <h2>Your PC</h2>
+            <h2 id="yourPC">Your PC</h2>
             <p>
                 First of all, you're going to need good hardware. Doing everything locally requires a very good PC. the minimum requirement is a graphics card with 8g of VRAM and an nvidia graphics card. It's possible with an AMD, but it's complicated to set up.<br>
             </p>
@@ -52,9 +47,9 @@
             </p>
         </div>
         <div class="my-5 rounded-md p-7 bg-slate-600">
-            <h2>The interface</h2>
+            <h2 id="theInterface">The interface</h2>
             <p>
-                The current reference software is created by AUTOMATIC111, which you can find on github, but you can use this modified version, which provides a better interface (i use this one) :<br/>
+                The current reference software is created by AUTOMATIC111, which you can find on github :<br/>
                 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui" target="_blank" class="link link--external" rel="nofollow noreferrer noopener">Stable Diffusion Webui by AUTOMATIC 1111</a>
             </p>
 
@@ -62,7 +57,7 @@
                 For an easy install, you can now DL a complete ready ot of the box software you just have to DL the last zip on the release page : <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/releases" target="_blank" rel="nofollow noreferrer noopener"></a>
             </p>
 
-            <h3>Optimize your install</h3>
+            <h3 id="theInterface_optimize">Optimize your install</h3>
             <p>
                 When you install the interface, it’s not optimal. You can edit the file web-ui.bat (for windows, sh for linux  &amp; mac) and add some parameters :
             </p>
@@ -93,7 +88,7 @@
             </p>
         </div>
         <div class="my-5 rounded-md p-7 bg-slate-600">
-            <h2>The differents files</h2>
+            <h2 id="the_dif_files">The differents files</h2>
             <p>
                 <b> Models in: </b>stable-diffusion-webui\<b>models\Stable-diffusion</b>
             </p>
@@ -118,7 +113,7 @@
                     </svg>
                     </div>
                     <div class="ml-3">
-                    <h3 class="text-sm font-medium text-yellow-800">ATTENTION !!!</h3>
+                    <h3 class="text-sm font-medium text-yellow-800 js-toc-ignore">ATTENTION !!!</h3>
                     <div class="mt-2 text-sm text-yellow-700">
                         <p>For the <b>LyCORIS</b> files you will need an extension in AUTOMATIC111 UI :<br/>
                         <a class="underline transition-all decoration-current hover:decoration-transparent" href="https://github.com/KohakuBlueleaf/a1111-sd-webui-lycoris" target="_blank" class="link link--external" rel="nofollow ugc noopener">https://github.com/KohakuBlueleaf/a1111-sd-webui-lycoris</a><br/>
@@ -152,7 +147,11 @@
         <div class="my-5 rounded-md p-7 bg-slate-600">
         {{ include("stable/samplers.html.twig") }}
         </div>     
-        
+
+        <div class="my-5 rounded-md p-7 bg-slate-600">
+        {{ include("stable/txt2img.html.twig") }}
+        </div>  
+
         <div class="my-5 rounded-md p-7 bg-slate-600">
         {{ include("stable/img2img.html.twig") }}
         </div>     
@@ -162,14 +161,10 @@
         </div>     
 
         <div class="my-5 rounded-md p-7 bg-slate-600">
-            <h2>More tips :</h2>
-            <h3>hide useless samplers</h3>
-            <img src=" {{ asset('build/images/stable/hide-sampler.png') }}" alt="hide-sampler">
-            <h2>And after ? </h2>
-            <p>You can go to <a href="#">txt2img</a></p>
-                
-            <p>You can read tips for <a href="#">prompting</a></p>
-            <p> Or maybe did you need some <a href="#">extension</a></p>
+        <h2 id="tips">Tips</h2>
+        <h3 id="tips_hideSamplers">Hide useless samplers</h3>
+        <img src=" {{ asset('build/images/stable/hide-sampler.png') }}" alt="hide-sampler">
+        
         </div>  
   
     </article>
