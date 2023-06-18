@@ -25,6 +25,7 @@
         "@fontsource/quicksand": "^4.5.6",
         "@fontsource/roboto": "^4.5.5",
         "@iconify/iconify": "^2.2.1",
+        "fast-image-zoom": "^7.0.1",
         "highlight.js": "^11.8.0",
         "tocbot": "^4.21.0"
     },

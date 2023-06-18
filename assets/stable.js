@@ -15,7 +15,7 @@
 import './styles/stable.css';
 import Iconify from '@iconify/iconify';
 import * as tocbot from 'tocbot';
-
+import imageZoom from 'fast-image-zoom';
 //import hljs from 'highlight.js';
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -31,5 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
         // For headings inside relative or absolute positioned containers within content.
         hasInnerContainers: true,
     });
-    
+  
+imageZoom();
 });

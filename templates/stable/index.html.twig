@@ -5,37 +5,33 @@
 
 {% block body %}
 
-    <article id="main_content" class="prose lg:prose-xl prose-slate dark:prose-invert prose-img:rounded-xl max-w-screen-lg mx-auto
+    <article id="main_content" class="prose lg:prose-xl prose-slate dark:prose-invert max-w-screen-lg mx-auto
         prose-code:bg-slate-800 prose-code:text-slate-100 prose-code:py-0.5 prose-code:px-2 prose-code:rounded-md prose-p:text-justify
         prose-a:text-blue-400 prose-a:underline prose-a:decoration-orange-400 prose-a:transition-all prose-a:underline-offset-1
         hover:prose-a:text-orange-400 hover:prose-a:decoration-transparent
         prose-code:font-mono
-        prose-img:shadow-md prose-img:shadow-slate-500
+        prose-img:shadow-md prose-img:shadow-slate-500 prose-img:rounded-xl
         prose-h2:text-orange-400
         prose-h3:text-purple-400
         prose-h4:text-emerald-500        
         prose-h5:text-indigo-300 prose-h5:font-medium js-toc-content
-        ">
+    ">
        
         <div class="my-5 rounded-md p-7 bg-slate-600">
-        <h2 id="introduction">Introduction</h2>
+            <h2 id="introduction">Introduction</h2>
             <p>
                 A fellow buddy asked my some help for stating to create IA rather than replying to him by PM, we might as well make one more guide lol.
             </p>
             <p>
                 When you read this guide, don't hesitate to ask me additional questions in PM and I'll complete it. ;)
-            </p>
-
-               
-               
-{#                 <li class="disabled-link">Inpainting <span class="text-red-500">(TODO)</span></li>
+            </p>                
+            
+        {#   <li class="disabled-link">Inpainting <span class="text-red-500">(TODO)</span></li>
                 <li class="disabled-link">ControlNet <span class="text-red-500">(TODO)</span></li>
                 <li class="disabled-link">Who create your own lora <span class="text-red-500">(TODO)</span></li>
         
                 <li class="disabled-link"><a href="oing.46410/post-20314598">Optimization image for internet sharing</a></li>
                 <li class="disabled-link"><a href="oing.46410/post-20314565">Best extensions to use with AUTOMATIC111 UI</a></li> #}
-
-            </ul>
         </div>
         <div class="my-5 rounded-md p-7 bg-slate-600">
             <h2 id="yourPC">Your PC</h2>
@@ -125,47 +121,48 @@
         </div>   
 
         <div class="my-5 rounded-md p-7 bg-slate-600">
-        {{ include("stable/model.html.twig") }}
+            {{ include("stable/model.html.twig") }}
         </div>   
         
         <div class="my-5 rounded-md p-7 bg-slate-600">
-        {{ include("stable/models-choices.html.twig") }}
+            {{ include("stable/models-choices.html.twig") }}
         </div>
 
         <div class="my-5 rounded-md p-7 bg-slate-600">
-        {{ include("stable/batch-explain.html.twig") }}
+            {{ include("stable/batch-explain.html.twig") }}
         </div>
-     
-       <div class="my-5 rounded-md p-7 bg-slate-600">
-        {{ include("stable/prompting.html.twig") }}
+    
+        <div class="my-5 rounded-md p-7 bg-slate-600">
+            {{ include("stable/prompting.html.twig") }}
         </div>
 
         <div class="my-5 rounded-md p-7 bg-slate-600">
-        {{ include("stable/overloaders.html.twig") }}
+            {{ include("stable/overloaders.html.twig") }}
         </div>   
 
         <div class="my-5 rounded-md p-7 bg-slate-600">
-        {{ include("stable/samplers.html.twig") }}
+            {{ include("stable/samplers.html.twig") }}
         </div>     
 
         <div class="my-5 rounded-md p-7 bg-slate-600">
-        {{ include("stable/txt2img.html.twig") }}
+            {{ include("stable/txt2img.html.twig") }}
         </div>  
 
         <div class="my-5 rounded-md p-7 bg-slate-600">
-        {{ include("stable/img2img.html.twig") }}
+            {{ include("stable/img2img.html.twig") }}
         </div>     
 
         <div class="my-5 rounded-md p-7 bg-slate-600">
-        {{ include("stable/upscaling.html.twig") }}
+            {{ include("stable/upscaling.html.twig") }}
         </div>     
 
         <div class="my-5 rounded-md p-7 bg-slate-600">
-        <h2 id="tips">Tips</h2>
-        <h3 id="tips_hideSamplers">Hide useless samplers</h3>
-        <img src=" {{ asset('build/images/stable/hide-sampler.png') }}" alt="hide-sampler">
-        
-        </div>  
-  
+            <h2 id="tips">Tips</h2>
+            <h3 id="tips_hideSamplers">Hide useless samplers</h3>
+            <img src=" {{ asset('build/images/stable/hide-sampler.png') }}" alt="hide-sampler">
+        </div>
+        <div class="my-5 rounded-md p-7 bg-slate-600">
+            {{ include("stable/extension.html.twig") }}
+        </div>
     </article>
 {% endblock %}

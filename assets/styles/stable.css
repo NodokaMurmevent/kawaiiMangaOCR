@@ -33,3 +33,13 @@
 .js-toc .toc-list a.is-active-link {
     @apply text-slate-50;
 }
+.image-zoom-wrapper::after {
+    @apply !bg-slate-800;
+}
+
+.image-zoom-wrapper-zoomed{
+    @apply relative -left-2;
+}
+.image-zoom-wrapper-zoomed img{
+    @apply shadow-none;
+}
