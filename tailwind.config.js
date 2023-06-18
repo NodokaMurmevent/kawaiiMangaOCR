@@ -14,6 +14,9 @@ module.exports = {
     fontFamily: {
       'title': ['"Roboto"'],
       'front': ['"Quicksand"'],
+      'mono': ['"Roboto Mono"'],
+      'stable': ['"Roboto"'],
+      'stable-title': ['"Quicksand"'],
     }
   },  
   plugins: [

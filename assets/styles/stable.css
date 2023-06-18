@@ -10,6 +10,14 @@
 @import "@fontsource/roboto/300";
 @import "@fontsource/roboto";
 @import "@fontsource/roboto/500";
+
+
+@import "@fontsource/roboto-mono/300";
+@import "@fontsource/roboto-mono";
+@import "@fontsource/roboto-mono/500";
+@import "@fontsource/roboto-mono/600";
+@import "@fontsource/roboto-mono/700";
+
 @import 'tocbot/static/css/tocbot.css';
 @import 'animate.css';
 
@@ -43,4 +51,8 @@
 }
 .image-zoom-wrapper-zoomed img{
     @apply shadow-none;
+}
+
+pre.not-prose{
+    @apply font-mono text-sm font-normal text-slate-300;
 }

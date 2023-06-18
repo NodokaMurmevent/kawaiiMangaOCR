@@ -6,11 +6,13 @@
 {% block body %}
 
     <article id="main_content" class="prose lg:prose-xl prose-slate dark:prose-invert max-w-screen-lg mx-auto
-        prose-code:bg-slate-800 prose-code:text-slate-100 prose-code:py-0.5 prose-code:px-2 prose-code:rounded-md prose-p:text-justify
+        prose-p:text-justify prose-p:font-stable
         prose-a:text-blue-400 prose-a:underline prose-a:decoration-orange-400 prose-a:transition-all prose-a:underline-offset-1
-        hover:prose-a:text-orange-400 hover:prose-a:decoration-transparent
-        prose-code:font-mono
+        hover:prose-a:text-orange-400 hover:prose-a:decoration-transparent        
         prose-img:shadow-md prose-img:shadow-slate-500 prose-img:rounded-xl
+        prose-headings:font-stable-title  
+        prose-code:overflow-x-auto prose-code:block lg:prose-code:!inline prose-code:whitespace-nowrap prose-code:font-mono prose-code:font-normal 
+        prose-code:text-[15px] prose-code:text-slate-300 prose-code:bg-slate-800 prose-code:py-0.5 prose-code:px-2 prose-code:rounded-md 
         prose-h2:text-orange-400
         prose-h3:text-purple-400
         prose-h4:text-emerald-500        
@@ -23,7 +25,7 @@
                 A fellow buddy asked my some help for stating to create IA rather than replying to him by PM, we might as well make one more guide lol.
             </p>
             <p>
-                When you read this guide, don't hesitate to ask me additional questions in PM and I'll complete it. ;)
+                When you read this guide, don't hesitate to ask me additional questions by <a href="mailto:civitai.zjm9i@simplelogin.com" class="text-slate-300 hover:text-gray-500">mail</a> and I'll complete it.
             </p>                
             
         {#   <li class="disabled-link">Inpainting <span class="text-red-500">(TODO)</span></li>
@@ -36,7 +38,7 @@
         <div class="rounded-md p-7 bg-slate-600">
             <h2 id="yourPC">Your PC</h2>
             <p>
-                First of all, you're going to need good hardware. Doing everything locally requires a very good PC. the minimum requirement is a graphics card with 8g of VRAM and an nvidia graphics card. It's possible with an AMD, but it's complicated to set up.<br>
+                First of all, you're going to need good hardware. Doing everything locally requires a very good PC. the minimum requirement is a graphics card with 8g (can work with 4 but with limitation) of VRAM and an nvidia graphics card. It's possible with an AMD, but it's complicated to set up.<br>
             </p>
             <p>
                 Make sure you have a well-ventilated tower. Every generation, push your graphics card all the way, and also when you're generating, don't use other software that requires a lot of power, such as 3D you can just crash your PC.<br>
@@ -59,27 +61,27 @@
             </p>
             <p>
                 <b>Line 6 :</b><br>
-                <code class="inline">set COMMANDLINE_ARGS= --xformers</code><br/>
+                <code>set COMMANDLINE_ARGS= --xformers</code><br/>
                 Activate xFormers for faster image rendering. It's disabled by default because some machines don't support it.
             </p>
             <p>
-                <code class="inline">set COMMANDLINE_ARGS= --update-all-extensions</code><br/>
+                <code>set COMMANDLINE_ARGS= --update-all-extensions</code><br/>
                 When you start your UI, this will automatically check if your extension needs to be updated and will download them.
             </p>
             <p>
-                <code class="inline">set COMMANDLINE_ARGS= --lowvram</code><br/>
+                <code>set COMMANDLINE_ARGS= --lowvram</code><br/>
                 Heavy reduction vram consumption. Perfect for graphics cards with only 4GB VRAM. Heavy reducing the rendering speed, very devastating.
             </p>
             <p>
-                <code class="inline">set COMMANDLINE_ARGS= --medvram</code><br/>
+                <code>set COMMANDLINE_ARGS= --medvram</code><br/>
                 Light reduction vram consumption. Perfect for graphics cards with only 8GB VRAM. Little reducing the rendering speed.
             </p>
             <p>
-                <code class="inline">set COMMANDLINE_ARGS= --no-half-vae  --no-half</code><br/>
+                <code>set COMMANDLINE_ARGS= --no-half-vae  --no-half</code><br/>
                 Sometimes, especially when you upscale, your model or VAE can return a black image. to avoid this, activate these two parameters. Consumes more vram.
             </p>
             <p>
-                <code class="inline">set COMMANDLINE_ARGS= --xformers --medvram  --no-half-vae  --no-half --update-all-extensions</code><br/>
+                <code>set COMMANDLINE_ARGS= --xformers --medvram  --no-half-vae  --no-half --update-all-extensions</code><br/>
                 Of course, you can activate them all together. In fact, I do.
             </p>
         </div>

@@ -967,6 +967,11 @@
   resolved "https://registry.yarnpkg.com/@fontsource/quicksand/-/quicksand-4.5.12.tgz#9d849f9c5fe5a237d1524d30653349ccfd77a0a8"
   integrity sha512-aSgAR82dAzRsWGupPobU1ubfX6MhrQgKw2xe0AEKyQ5yMMpNhptTajbOIPJ8ZE5CPX3UHYlGY0da/7ztoEM3vQ==
 
+"@fontsource/roboto-mono@^5.0.3":
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/@fontsource/roboto-mono/-/roboto-mono-5.0.3.tgz#83a1ce8a95590abd9797f2859f26325899989ca2"
+  integrity sha512-tNMpDt9ugssSfoPdH9attR+8iNtaEwXr9IzWbdAWFNk6VhrrQoo9ldHaGCC3Z73Xb+okerVVq2nuSZ34PPzaQg==
+
 "@fontsource/roboto@^4.5.5":
   version "4.5.8"
   resolved "https://registry.yarnpkg.com/@fontsource/roboto/-/roboto-4.5.8.tgz#56347764786079838faf43f0eeda22dd7328437f"

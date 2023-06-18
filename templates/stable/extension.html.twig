@@ -1,57 +1,90 @@
 <h2 id="extensions">Extensions</h2>
-<p>To use with AUTOMATIC1111 UI</p>
-<h3 id="extensions_a1111-sd-webui-lycoris">a1111-sd-webui-lycoris</h3>
-<p>Add compatibility to lycoris overloaders<br/>
-	no need to change parameters</p>
+<p>They are to use with AUTOMATIC1111 UI.</p>
 
-<h3 id="extensions_a1111-sd-webui-tagcomplete">a1111-sd-webui-tagcomplete</h3>
+<p>Most of them can be easly installer from the tab extention.</p>
+
+<img src="{{ asset('build/images/stable/extension.png') }}" alt="extension">
+
+<h3 id="extensions_a1111-sd-webui-lycoris">Lycoris</h3>
+<p>Add compatibility to lycoris overloaders, no parameters to change.</p>
+
+<p>Complete documentaion, syntaxe and changelog on the <a href="https://github.com/KohakuBlueleaf/a1111-sd-webui-lycoris" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+
+<h3 id="extensions_a1111-sd-webui-tagcomplete">Tag Complete</h3>
 <p>Add autocompletion in your prompt based on the tag you can find on Danbooru</p>
-1685863617678.png
 
-<p>In settings, enable this options if is not already</p>
-firefox_iCQS2f2eLo.png
+<div class="grid items-center justify-center grid-cols-1 gap-4 md:grid-cols-2">
+	<div><img src="{{ asset('build/images/stable/tagcomplete-1.png') }}" alt="hide-sampler"></div>
+	<div><img src="{{ asset('build/images/stable/tagcomplete-2.png') }}" alt="hide-sampler"><p>In settings, enable this options if is not already</p></div>
+</div>
 
-<h3 id="extensions_sd-dynamic-prompts">sd-dynamic-prompts</h3>
+<p>Complete documentaion, syntaxe and changelog on the <a href="https://github.com/DominikDoom/a1111-sd-webui-tagcomplete" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
 
-<p>Enable the wildcards, a powerful tool in your prompt</p>
+<h3 id="extensions_sd-dynamic-prompts">Dynamic Prompts</h3>
 
-Example :
+<h4>wildcards</h4>
+<p>Enable the wildcards and dynamic syntaxe, some powerful tools in your prompt.</p>
 
-Code:
-
-<pre><code>hair, (best quality, masterpiece:1.2), <span class="text-pink-400">__hair-color__</span> hair , <span class="text-pink-400">__eyecolor__</span> eyes, beach</code></pre>
-
+<pre class="not-prose"><code>hair, (best quality, masterpiece:1.2), <span class="text-pink-400">__hair-color__</span> hair , <span class="text-pink-400">__eyecolor__</span> eyes, beach</code></pre>
 
 <p>The prompt will take a random value from the file with the same name you need to put the files there :</p>
-<code>stable-diffusion-webui\extensions\sd-dynamic-prompts\</code>
-
-<p>You can create your own files or you can also found better and complete wildcard on Civitai or also on ATF.</p>
-
-<p>You also can choose a keyword directly from the autocompletion. It’s not anymore random, but it’s useful if you need an idea.</p>
-1685864510716.png
+<code>stable-diffusion-webui\extensions\sd-dynamic-prompts\<span class="text-pink-400">hair-color</span>.txt</code><br/>
+<code>stable-diffusion-webui\extensions\sd-dynamic-prompts\<span class="text-pink-400">eyecolor</span>.txt</code>
+<p>You can create your own files or you can also found better and complete wildcard on Civitai.</p>
 
 
-<h3 id="extensions_sd-webui-infinite-image-browsing">sd-webui-infinite-image-browsing</h3>
+<pre class="not-prose"><code>{ KEYWORKS | KEYWORKS | KEYWORKS }</code></pre>
+<p>Randomly choice between the three keyword.</p>
+
+<pre class="not-prose"><code>{2:: freckles | body freckles }</code></pre>
+
+<p>Randomly choice between the 2 keyword. But freckles have 2x more change to be choose</p>
+
+<pre class="not-prose"><code>red {__clothes/clothing-female__|__clothes/clothing-male__|__clothes/clothing__}</code></pre>
+
+<p>Randomly choice between the three wildcard files.</p>
+
+<div class="grid items-center justify-center grid-cols-1 gap-4 md:grid-cols-2">
+	<div><p>If you have a1111-sd-webui-tagcomplete insalled, he can detect your wildcard and you also can choose a keyword directly from the autocompletion. It’s not anymore random, but it’s useful if you need an idea.</p></div>
+	<div><img src="{{ asset('build/images/stable/dynamic.png') }}" alt="hide-sampler"></div>
+</div>
+
+<p>Complete documentaion, syntaxe and changelog on the <a href="https://github.com/adieyal/sd-dynamic-prompts" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+
+
+<h3 id="extensions_sd-webui-infinite-image-browsing">Infinite Image Browsing</h3>
 <p>Just a simple browser image directly on your interface. Better than the official extension.</p>
-1685864723601.png
+<img src="{{ asset('build/images/stable/infinite-image-browsing.jpg') }}" alt="hide-sampler">
+<p>Complete documentaion, syntaxe and changelog on the <a href="https://github.com/zanllp/sd-webui-infinite-image-browsing" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
 
 
-<h3 id="extensions_ultimate-upscale-for-automatic1111">ultimate-upscale-for-automatic1111</h3>
+<h3 id="extensions_ultimate-upscale-for-automatic1111">Ultimate Upscale</h3>
 <p>It’s a farest better upscaler than the default, and it’s compatible with controlNet.</p>
 
 <p>
-	<strong>Basic parameters</strong>
+	<strong>Basic parameters (in img2img at the bottom and in script)</strong>
 </p>
 <img src=" {{ asset('build/images/stable/ultimate-upscale.png') }}" alt="hide-sampler">
 
-<h3 id="extensions_civitaiHelper">Civitai Helper</h3>
-<p>This extension will make your life easier with the civitai site.
-	<br>
-	Once installed you can scan all your models, lora, etc... And it will automatically download the preview.
-	It can also fetch new versions for you and install them. Perfect for saving time and getting lost in folders.</p>
+<p>Complete documentaion, syntaxe and changelog on the <a href="https://github.com/Coyote-A/ultimate-upscale-for-automatic1111" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
 
-<p>The GitHub is clear enough that I don't need to explain it here :
-	<a href="https://github.com/butaixianran/Stable-Diffusion-Webui-Civitai-Helper" target="_blank" rel="noopener noreferrer">Stable Diffusion Webui Civitai Helper</a>
-	<br>
-	<i>(thanks to a friend for telling me about this extension)</i>
+<h3 id="extensions_civitaiHelper">Civitai Helper</h3>
+<p>
+	This extension will make your life easier with the civitai site.<br>
+	Once installed you can scan all your models, lora, etc... And it will automatically download the preview.
+	It can also fetch new versions for you and install them. Perfect for saving time and not getting lost in folders.
 </p>
+
+<p>Complete documentaion, syntaxe and changelog on the <a href="https://github.com/butaixianran/Stable-Diffusion-Webui-Civitai-Helper" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+
+<p><i>(thanks to a friend for telling me about this extension)</i></p>
+
+
+<h3 id="extensions_aspectRation">Aspect Ratio Selector</h3>
+
+<p>Add some button in text2img and img2img for choose preselect ratio image.</p>
+
+<img src=" {{ asset('build/images/stable/ratio.png') }}" alt="ratio">
+<p>You can add more ratio in :</p>
+<code class="block">stable-diffusion-webui\extensions\sd-webui-ar\aspect_ratios.txt</code>
+<p>Complete documentaion, syntaxe and changelog on the <a href="https://github.com/alemelis/sd-webui-ar" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
