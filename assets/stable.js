@@ -16,10 +16,11 @@ import './styles/stable.css';
 import Iconify from '@iconify/iconify';
 import * as tocbot from 'tocbot';
 import imageZoom from 'fast-image-zoom';
-//import hljs from 'highlight.js';
+import Alpine from 'alpinejs'; 
+window.Alpine = Alpine; 
+Alpine.start();
 
 document.addEventListener("DOMContentLoaded", () => {
-//   hljs.highlightAll();
     tocbot.init({
         // Where to render the table of contents.
         tocSelector: '.js-toc',
@@ -30,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
         headingSelector: 'h2, h3, h4',
         // For headings inside relative or absolute positioned containers within content.
         hasInnerContainers: true,
-    });
-  
-imageZoom();
+    });  
+    imageZoom();
 });
