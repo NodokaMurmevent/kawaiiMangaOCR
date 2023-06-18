@@ -32,8 +32,7 @@
                 <li class="disabled-link">ControlNet <span class="text-red-500">(TODO)</span></li>
                 <li class="disabled-link">Who create your own lora <span class="text-red-500">(TODO)</span></li>
         
-                <li class="disabled-link"><a href="oing.46410/post-20314598">Optimization image for internet sharing</a></li>
-                <li class="disabled-link"><a href="oing.46410/post-20314565">Best extensions to use with AUTOMATIC111 UI</a></li> #}
+                <li class="disabled-link"><a href="oing.46410/post-20314598">Optimization image for internet sharing</a></li> #}
         </div>
         <div class="rounded-md p-7 bg-slate-600">
             <h2 id="yourPC">Your PC</h2>
@@ -79,6 +78,7 @@
             <p>
                 <code>set COMMANDLINE_ARGS= --no-half-vae  --no-half</code><br/>
                 Sometimes, especially when you upscale, your model or VAE can return a black image. to avoid this, activate these two parameters. Consumes more vram.
+                You can try <code>--no-half-vae</code> alone first sometime It's enough.
             </p>
             <p>
                 <code>set COMMANDLINE_ARGS= --xformers --medvram  --no-half-vae  --no-half --update-all-extensions</code><br/>
@@ -157,7 +157,9 @@
         <div class="rounded-md p-7 bg-slate-600">
             {{ include("stable/upscaling.html.twig") }}
         </div>     
-
+        <div class="rounded-md p-7 bg-slate-600">
+            {{ include("stable/inpainting.html.twig") }}
+        </div>   
         <div class="rounded-md p-7 bg-slate-600">
             <h2 id="tips">Tips</h2>
             <h3 id="tips_hideSamplers">Hide useless samplers</h3>

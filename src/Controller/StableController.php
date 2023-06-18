@@ -13,15 +13,18 @@ class StableController extends AbstractController
     public function index(): Response
     {
 
-        $matomoSiteId = 61;
-        $matomoUrl = "https://piwik.imago-design.net"; 
-        $matomoToken = "adf36114f2965ae516ac5cdd9e3a24e1";        
   
-        $matomoPageTitle = "Another beginner guide to generate your local Waifu | Ni~ Coni CoNiiiiiifusion";
-        $matomoTracker = new MatomoTracker((int)$matomoSiteId, $matomoUrl);
-        $matomoTracker->setTokenAuth($matomoToken);
-        $matomoTracker->doTrackPageView($matomoPageTitle);
+        if ('prod' == $_ENV['APP_ENV']) {
+            $matomoSiteId = 61;
+            $matomoUrl = 'https://piwik.imago-design.net';
+            $matomoToken = 'adf36114f2965ae516ac5cdd9e3a24e1';
 
+            $matomoPageTitle = 'Another beginner guide to generate your local Waifu | Ni~ Coni CoNiiiiiifusion';
+            $matomoTracker = new MatomoTracker((int) $matomoSiteId, $matomoUrl);
+            $matomoTracker->setTokenAuth($matomoToken);
+            $matomoTracker->doTrackPageView($matomoPageTitle);
+        }
+        
         return $this->render('stable/index.html.twig', [
             'controller_name' => 'StableController',
         ]);
