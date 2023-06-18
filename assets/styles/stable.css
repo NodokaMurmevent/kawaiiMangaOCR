@@ -11,6 +11,7 @@
 @import "@fontsource/roboto";
 @import "@fontsource/roboto/500";
 @import 'tocbot/static/css/tocbot.css';
+@import 'animate.css';
 
 
 .prose :where(ul > li):not(:where([class~="not-prose"] *))::marker{
