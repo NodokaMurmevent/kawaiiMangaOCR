@@ -19,108 +19,11 @@
         prose-h5:text-indigo-300 prose-h5:font-medium js-toc-content space-y-4
     ">
        
-        <div class="rounded-md p-7 bg-slate-600">
-            <h2 id="introduction">Introduction</h2>
-            <p>
-                A fellow buddy asked my some help for stating to create IA rather than replying to him by PM, we might as well make one more guide lol.
-            </p>
-            <p>
-                When you read this guide, don't hesitate to ask me additional questions by <a href="mailto:civitai.zjm9i@simplelogin.com" class="text-slate-300 hover:text-gray-500">mail</a> and I'll complete it.
-            </p>                
-            
-        {#   <li class="disabled-link">Inpainting <span class="text-red-500">(TODO)</span></li>
-                <li class="disabled-link">ControlNet <span class="text-red-500">(TODO)</span></li>
-                <li class="disabled-link">Who create your own lora <span class="text-red-500">(TODO)</span></li>
-        
-                <li class="disabled-link"><a href="oing.46410/post-20314598">Optimization image for internet sharing</a></li> #}
-        </div>
-        <div class="rounded-md p-7 bg-slate-600">
-            <h2 id="yourPC">Your PC</h2>
-            <p>
-                First of all, you're going to need good hardware. Doing everything locally requires a very good PC. the minimum requirement is a graphics card with 8g (can work with 4 but with limitation) of VRAM and an nvidia graphics card. It's possible with an AMD, but it's complicated to set up.<br>
-            </p>
-            <p>
-                Make sure you have a well-ventilated tower. Every generation, push your graphics card all the way, and also when you're generating, don't use other software that requires a lot of power, such as 3D you can just crash your PC.<br>
-            </p>
-        </div>
-        <div class="rounded-md p-7 bg-slate-600">
-            <h2 id="theInterface">The interface</h2>
-            <p>
-                The current reference software is created by AUTOMATIC111, which you can find on github :<br/>
-                <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui" target="_blank" class="link link--external" rel="nofollow noreferrer noopener">Stable Diffusion Webui by AUTOMATIC 1111</a>
-            </p>
 
-            <p> 
-                For an easy install, you can now DL a complete ready ot of the box software you just have to DL the last zip on the release page : <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/releases" target="_blank" rel="nofollow noreferrer noopener"></a>
-            </p>
 
-            <h3 id="theInterface_optimize">Optimize your install</h3>
-            <p>
-                When you install the interface, it’s not optimal. You can edit the file web-ui.bat (for windows, sh for linux  &amp; mac) and add some parameters :
-            </p>
-            <p>
-                <b>Line 6 :</b><br>
-                <code>set COMMANDLINE_ARGS= --xformers</code><br/>
-                Activate xFormers for faster image rendering. It's disabled by default because some machines don't support it.
-            </p>
-            <p>
-                <code>set COMMANDLINE_ARGS= --update-all-extensions</code><br/>
-                When you start your UI, this will automatically check if your extension needs to be updated and will download them.
-            </p>
-            <p>
-                <code>set COMMANDLINE_ARGS= --lowvram</code><br/>
-                Heavy reduction vram consumption. Perfect for graphics cards with only 4GB VRAM. Heavy reducing the rendering speed, very devastating.
-            </p>
-            <p>
-                <code>set COMMANDLINE_ARGS= --medvram</code><br/>
-                Light reduction vram consumption. Perfect for graphics cards with only 8GB VRAM. Little reducing the rendering speed.
-            </p>
-            <p>
-                <code>set COMMANDLINE_ARGS= --no-half-vae  --no-half</code><br/>
-                Sometimes, especially when you upscale, your model or VAE can return a black image. to avoid this, activate these two parameters. Consumes more vram.
-                You can try <code>--no-half-vae</code> alone first sometime It's enough.
-            </p>
-            <p>
-                <code>set COMMANDLINE_ARGS= --xformers --medvram  --no-half-vae  --no-half --update-all-extensions</code><br/>
-                Of course, you can activate them all together. In fact, I do.
-            </p>
-        </div>
-        <div class="rounded-md p-7 bg-slate-600">
-            <h2 id="the_dif_files">The differents files</h2>
-            <p>
-                <b> Models in: </b>stable-diffusion-webui\<b>models\Stable-diffusion</b>
-            </p>
-            <p>
-                <b>Embeddings/Textual Inversion in: </b>stable-diffusion-webui\<b>embeddings</b>
-            </p>
-            <p>
-                <b>Hypernetworks: </b>stable-diffusion-webui\<b>models\hypernetworks</b>
-            </p>
-            <p>
-                <b>Lora and LoCON in: </b>stable-diffusion-webui<b>\models\Lora</b>
-            </p>
-            <p>
-                <b>LyCORIS in: </b>stable-diffusion-webui\<b>models\LyCORIS</b>
-            </p>
-
-            <div class="p-4 my-4 rounded-md bg-yellow-50 not-prose">
-                <div class="flex">
-                    <div class="flex-shrink-0">
-                    <svg class="w-5 h-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
-                    </svg>
-                    </div>
-                    <div class="ml-3">
-                    <h3 class="text-sm font-medium text-yellow-800 js-toc-ignore">ATTENTION !!!</h3>
-                    <div class="mt-2 text-sm text-yellow-700">
-                        <p>For the <b>LyCORIS</b> files you will need an extension in AUTOMATIC111 UI :<br/>
-                        <a class="underline transition-all decoration-current hover:decoration-transparent" href="https://github.com/KohakuBlueleaf/a1111-sd-webui-lycoris" target="_blank" class="link link--external" rel="nofollow ugc noopener">https://github.com/KohakuBlueleaf/a1111-sd-webui-lycoris</a><br/>
-                        You can install this from the UI in extension → available → search.</p>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </div>   
+    
+        {{ include("stable/start.html.twig") }}
+          
 
         <div class="rounded-md p-7 bg-slate-600">
             {{ include("stable/model.html.twig") }}
@@ -159,6 +62,9 @@
         </div>     
         <div class="rounded-md p-7 bg-slate-600">
             {{ include("stable/inpainting.html.twig") }}
+        </div>   
+                <div class="rounded-md p-7 bg-slate-600">
+            {{ include("stable/finish.html.twig") }}
         </div>   
         <div class="rounded-md p-7 bg-slate-600">
             <h2 id="tips">Tips</h2>

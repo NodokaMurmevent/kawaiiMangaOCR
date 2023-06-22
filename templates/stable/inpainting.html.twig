@@ -2,6 +2,7 @@
 
 <h2 id="inpainting">Inpainting</h2>
 
+<h3 id="inpainting_whole">Inpainting the whole picture</h3>
 <p>Once you've got an image you like, which you've passed through txt2img, img2img, you may find that certain elements still don't fit, such a hand, or the background of the image. 
 To correct these elements, you can define a particular area by "painting" it and generate images in which only that part will be modified.</p>
 
@@ -43,16 +44,32 @@ To correct these elements, you can define a particular area by "painting" it and
 
 <p>And now you have an image that exceeds 1000px in height. To get around this problem effectively, you'll have to play around with some parameters :</p>
 
+<h3 id="inpainting_masked">Painting only the masked</h3>
+
+<p>In this example, I'm going to assume that I'm not satisfied with the eyes. So, as before, I'm going to cover the area in question</p>
+
+<div class="grid items-center justify-center grid-cols-1 text-center md:grid-cols-2 gap-x-4">
+	<div>(creepy, huh?)</div>
+	<div>i added : <code>blue eyes</code></div>
+	<div><img class="!mt-0 mx-auto" src="{{ asset('build/images/stable/inpainting/inpainting-2-1.png') }}" alt="hide-sampler"></div>
+	<div><img class="!mt-0 mx-auto" src="{{ asset('build/images/stable/inpainting/inpainting-2-2.png') }}" alt="hide-sampler"></div>
+</div>
+
+<p>And for the parameters : </p>
 <img src="{{ asset('build/images/stable/inpainting/inpaiting-phase-2.png') }}" alt="hide-sampler">
 
 <ol>
 	<li>just for be sure</li>
 	<li> THE MOST IMPORTANT HERE, when you choose this option, you tell the software to redo only the masked part; it will cut out a rectangle and work only on it, ignoring the rest of the image to avoid filling the ram unnecessarily. 
 	The software simply glues the new section onto the old image at the end, merging them together.</li>
-	<li>Because we have check "only masked" this parameter will not generate a full image in 512px–</li>
+	<li>Because we have check "only masked" this parameter will not generate the full image in 512px–</li>
 	<li>– But only the part i have only the area I've covered. in this exemple, the eyes.</li>
 	<li>As we generate lots of small images, feel free to increase these two values and send lots in a row.</li>
 	<li>This one, just like img2img, so feel free to play around with it. Each change will require a different value.</li>
 	<li>Sometimes, you'll want the inpainting to overflow a little and be more progressive (or less). This is the value you need to change.</li>
 	<li>Adding more padding, around your painted area, certainly increases the size of your image to be generated. But the AI needs the nier pixels to know in which direction to go. Increasing the value can sometimes help to control it better.</li>
 </ol>
+
+<p>The result :</p>
+
+<img class="" src="{{ asset('build/images/stable/inpainting/inpainting-2-3.jpg') }}" alt="hide-sampler">
