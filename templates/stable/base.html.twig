@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" class="dark">
+<html lang="en" class="dark">
 	<head>
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -10,8 +10,28 @@
 		<title>
 			{% block title %}
 			
-			{% endblock %} | Ni~ Coni CoNiiiiiifusion
+			{% endblock %} | Ni~ Coni CoNiiifusion
 		</title>
+
+		<meta name="description" content="Just another guide to Stable Diffusion for generate yout waifu locally">		
+
+		<meta property="og:site_name" content="Ni~ Coni CoNiiifusion"/>
+		{% block opengraph %}
+			<meta property="og:title" content="Ni~ Coni CoNiiifusion"/>
+			<meta property="og:description" content="Just another guide to Stable Diffusion for generate yout waifu locally"/>
+			<meta property="og:type" content="website"/>
+			<meta property="og:image" content="{{ asset('build/images/stable/nico.webp') }}"/>
+			<meta property="og:image:alt" content="Logo Ni~ Coni CoNiiifusion"/>			
+		{% endblock %}
+		<meta property="og:url" content="{{ app.request.uri }}"/>
+		<link rel="canonical" href="{{ app.request.uri }}"/>
+		<meta property="og:locale" content="en_US"/>
+		
+		<meta name="robots" content="index, follow">
+
+		<meta property="twitter:card" content="summary_large_image"/>
+		<meta property="twitter:site" content="@NodokaMurmevent"/>
+		<meta name="theme-color" content="#db2777">
 
 		{{ encore_entry_link_tags('stable') }}
 		{{ encore_entry_script_tags('stable') }}
