@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     tocbot.init({
         // Where to render the table of contents.
         tocSelector: '.js-toc',
+        scrollSmooth: false,
         // Where to grab the headings to build the table of contents.
         contentSelector: '.js-toc-content',
         ignoreSelector: '.js-toc-ignore',
