@@ -2,21 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "@fontsource/quicksand/300";
+@import "@fontsource/quicksand/300.css";
 @import "@fontsource/quicksand";
-@import "@fontsource/quicksand/500";
-@import "@fontsource/quicksand/600";
-@import "@fontsource/quicksand/700";
-@import "@fontsource/roboto/300";
+@import "@fontsource/quicksand/500.css";
+@import "@fontsource/quicksand/600.css";
+@import "@fontsource/quicksand/700.css";
+@import "@fontsource/roboto/300.css";
 @import "@fontsource/roboto";
-@import "@fontsource/roboto/500";
+@import "@fontsource/roboto/500.css";
 
 
-@import "@fontsource/roboto-mono/300";
+@import "@fontsource/roboto-mono/300.css";
 @import "@fontsource/roboto-mono";
-@import "@fontsource/roboto-mono/500";
-@import "@fontsource/roboto-mono/600";
-@import "@fontsource/roboto-mono/700";
+@import "@fontsource/roboto-mono/500.css";
+@import "@fontsource/roboto-mono/600.css";
+@import "@fontsource/roboto-mono/700.css";
 
 @import 'tocbot/static/css/tocbot.css';
 @import 'animate.css';
@@ -53,6 +53,6 @@
     @apply shadow-none;
 }
 
-pre.not-prose{
+#main_content pre{
     @apply font-mono text-sm font-normal text-slate-300;
 }

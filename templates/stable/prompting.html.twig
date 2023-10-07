@@ -14,7 +14,7 @@
 </p>
 
 <h4 id="prompting_positive_mix">It’s totally possible to mix them. For example</h4>	
-<pre class="not-prose"><code>(best quality, masterpiece:1.2), (2 girls running outside:1.1), blue sportwear, joyful, happy, open mouth,  sweat, (hot:1.1), sun</code></pre>
+<pre>(best quality, masterpiece:1.2), (2 girls running outside:1.1), blue sportwear, joyful, happy, open mouth,  sweat, (hot:1.1), sun</pre>
 
 <p>
 	The order of your keywords is important. The further your keyword is from the beginning, the less powerful it is.
@@ -22,11 +22,11 @@
 
 <h4 id="prompting_positiv_example">Full typical prompt example</h4>
 	
-<pre class="not-prose"><code>{{'(best quality, masterpiece:1.2), 1girl, standing, solo, pose, big eyes, wide oval eyes, one eye closed, lip liner , (photoshoot studio:1.1), huge breasts, 
+<pre>{{'(best quality, masterpiece:1.2), 1girl, standing, solo, pose, big eyes, wide oval eyes, one eye closed, lip liner , (photoshoot studio:1.1), huge breasts,
 skinny, skindentation, 
 one side up, purple eyes, light brown hair, big hair, 
 thick thighs, (pink luxury fashion:1.1), very dark skin, ebony, 
-<lora:GoodHands-vanilla:1> nice hands, perfect hands' | escape("html") }}</code></pre>
+<lora:GoodHands-vanilla:1> nice hands, perfect hands' | escape("html") }}</pre>
 	
 <img src="{{ asset('build/images/stable/prompt-detail.png') }}" alt="hide-sampler">
 
@@ -84,7 +84,7 @@ thick thighs, (pink luxury fashion:1.1), very dark skin, ebony,
 
 
 <h4 id="prompting_negative_examples">Examples </h4>
-For this positive prompt: <pre class="not-prose"><code>{{'(best quality:1.2), (masterpiece:1.2), 1 woman, clothes' | escape("html") }}</code></pre>
+For this positive prompt: <pre>{{'(best quality:1.2), (masterpiece:1.2), 1 woman, clothes' | escape("html") }}</pre>
 
 <h5 id="prompting_negative_examples_simple">Simple negative prompt</h5>
 <img src=" {{ asset('build/images/stable/prompting-1.webp') }}" alt="hide-sampler">
@@ -93,7 +93,7 @@ For this positive prompt: <pre class="not-prose"><code>{{'(best quality:1.2), (m
 <img src=" {{ asset('build/images/stable/prompting-2.webp') }}" alt="hide-sampler">
 
 Code:
-<pre class="not-prose"><code>{{'(worst quality, low quality:1.2), lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry' | escape("html") }}</code></pre>
+<pre>{{'(worst quality, low quality:1.2), lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry' | escape("html") }}</pre>
 
 <h5 id="prompting_negative_examples_complexeEmbeddings">Example with some embedding </h5>
 <p>The trouble with negative prompts. It's hard to know what to put in them, and they can get very long.</p>
@@ -110,4 +110,4 @@ Code:
 
 <p>Code:</p>
 
-<pre class="not-prose"><code>{{'(worst quality, low quality:1.3), (EasyNegative:0.9), (bad_prompt_version2:0.8), (painting by bad-artist-anime:0.9), (extra fingers, deformed hands, polydactyl:1.4), nude, completely nude' | escape("html") }}</code></pre>
+<pre>{{'(worst quality, low quality:1.3), (EasyNegative:0.9), (bad_prompt_version2:0.8), (painting by bad-artist-anime:0.9), (extra fingers, deformed hands, polydactyl:1.4), nude, completely nude' | escape("html") }}</pre>
