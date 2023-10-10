@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="e35d6ba3-22fc-46d9-bb17-b60ed4cb20b3" name="is24k.ftp.infomaniak.com [Stéphane]" url="https://la-cave-a-nodo.fr">
+        <fileTransfer rootFolder="/home/clients/32bc59df60d2ead39f1208952346f560" accessType="SFTP" host="is24k.ftp.infomaniak.com" port="22" sshConfigId="9f864267-157f-4f68-8b2d-3e9778f7f7ba" sshConfig="is24k_imago@is24k.ftp.infomaniak.com:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" isUseRsync="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
