@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<title>
+			{% block title %}
+			
+			{% endblock %} | Ni~ Coni CoNiiifusion
+		</title>
+
+		<meta name="description" content="Juste un autre tuto de scantrad pour traduire ce que dis votre Waifu">		
+
+		<meta property="og:site_name" content="Ni~ Coni CoNiiifusion"/>
+		{% block opengraph %}
+			<meta property="og:title" content="Ni~ Coni CoNiiifusion"/>
+			<meta property="og:description" content="Juste un autre tuto de scantrad pour traduire ce que dis votre Waifu"/>
+			<meta property="og:type" content="website"/>
+			<meta property="og:image" content="{{ asset('build/images/stable/nico.webp') }}"/>
+			<meta property="og:image:alt" content="Logo Ni~ Coni CoNiiifusion"/>			
+		{% endblock %}
+		<meta property="og:url" content="{{ app.request.uri }}"/>
+		<link rel="canonical" href="{{ app.request.uri }}"/>
+		<meta property="og:locale" content="en_US"/>
+		
+		<meta name="robots" content="index, follow">
+
+		<meta property="twitter:card" content="summary_large_image"/>
+		<meta property="twitter:site" content="@NodokaMurmevent"/>
+		<meta name="theme-color" content="#db2777">
+
+		{{ encore_entry_link_tags('stable') }}
+		{{ encore_entry_script_tags('stable') }}
+
+	</head>
+	
+	<body class="antialiased bg-slate-700 font-stable">
+		{% include "scantrad/includes/header.html.twig" %}
+		<div class="container flex flex-col justify-between min-h-screen mx-auto font-front">
+			
+			<h1 class="m-6 text-2xl font-bold text-center uppercase lg:text-3xl text-slate-50">Juste un autre tuto de scantrad pour traduire ce que dis votre Waifu</h1>
+			<div class="relative flex flex-col-reverse gap-3 mx-3 md:grid md:grid-cols-4">
+				<main class="container col-span-3 mx-auto lg:px-0">
+					{% block body %}{% endblock %}
+				</main>
+				<aside class="sticky top-0 col-span-1 md:relative">				
+					<div x-data="{ open: false }" class="sticky top-0">
+						<button x-on:click="open = ! open" class="block w-full p-2 text-lg font-semibold uppercase shadow-md md:hidden bg-slate-600 text-slate-100">
+							<span x-show="open" class="inline iconify-inline" data-icon="ep:close-bold"></span>
+							<span x-show="!open" class="inline iconify-inline" data-icon="mingcute:menu-fill"></span>
+							Menu
+						</button>
+						<nav x-show="open" @click.outside="open = false" class="rounded-md toc js-toc bg-slate-500 md:bg-slate-600 md:!block shadow-md md:shadow-none text-lg"></nav>						
+					</div>					
+				</aside>
+			</div>			
+			
+		</div>
+		{% include "scantrad/includes/footer.html.twig" %}
+	</body>
+</html>
