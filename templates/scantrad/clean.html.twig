@@ -1,6 +1,127 @@
 <div class="rounded-md p-7 bg-slate-600">
-    <h2 id="introduction">Nettoyage</h2>
-    <p>
+    <h2 id="nettoyage">Nettoyage</h2>
     
+    <p>
+        Le nettoyage, aussi appelé le clean. Consiste à retirer les élement que l’on ne veut pas de notre chapitre.
     </p>
+    
+    <p>
+        Dans la majorité des cas cela consiste juste à retirer le texte des bulles. Ce qui n’est vraiment pas compliqué. <br>
+        Par contre. Il existe plusieurs niveaux de nettoyage, et des techniques diverses pour y arriver plus ou moins facilement.
+    </p>
+    
+    <p>
+       Les techniques que je vais montrer ici sont dites : « non destructrices » le but est faire des fichiers ou l’image d‘origine n’est pas altéré. <br>
+        Certains trouverons l’idée saugrenue, aprés tout, une fois le fichier publié sur internet. On se contre fou du scan limite on peut le jeter.
+    </p>
+    
+    <p> C’est vrai, la majorité du temps. Que ce passe t’il si un beau jour, vous remarquez une erreur de traduction ? si un scan de meilleur qualité sort ?
+    Si vous souhaitez simplement tout compiler dans une archive pour liseuse, etc.</p>
+    
+    <h3 id="nettoyage-niveau-un">Niveau 1</h3>
+    
+    <p>L’erreur que voit la plus récurente c’est de vouloir nettoyer toute la bulle alors que c’est inutile.
+    Si on prend deux secondes pour regarder le texte dans une bulle, on voit que le texte japonais est souvent maintenu dans une cartouche verticale.
+    Il suffit donc de recouvrir exactement cette zone pour effacer tout texte.
+    L’avantage de faire ça, c’est la rapidité. Dans l’exemple suivant, je prends ainsi l’outil rectangle arrondi à 20%.</p>
+    
+    <p> Et on y go :</p>
+    <img class="mx-auto w-3/4" src=" {{ asset('build/images/scantrad/clean/clean-rapide-page.webp') }}" alt="nettoyage-niveau-zero" loading="lazy">
+    
+    <p> Avec un peu d’expérience, on peut ainsi nettoyer des chapitres entiers en quelques minutes.</p>
+    
+    <p>Le 1er souci que vous allez rencontrer c’est pour les bulles aux formes ésotériques.</p>
+    
+    <img class="mx-auto w-1/2" src=" {{ asset('build/images/scantrad/clean/clean-bulle-complexe.webp') }}" alt="nettoyage-niveau-zero-bulle complexe" loading="lazy">
+    
+    <p>Pour se faire votre ami sera la plume :</p>
+    
+    <img class="mx-auto" src=" {{ asset('build/images/scantrad/clean/plume.webp') }}" alt="nettoyage-niveau-zero-bulle plume" loading="lazy">
+    
+    <p>Le concept de la plume est simple. Vous cliquez. Ça met un point. Vous mettez plein de points (pensez à fermer la forme). Et vous avez une forme « dynamique » cette forme peut être modifié librement à tout moment.</p>
+    
+    <img class="mx-auto w-1/2" src=" {{ asset('build/images/scantrad/clean/clean-plume.webp') }}" alt="nettoyage-niveau-zero-bulle plume" loading="lazy">
+    
+    <p>Déja cet outil permet donc de nettoyer des bulles complexes, mais il a une autre utilité. il est possible de mettre du texte dans la forme en elle-même. ce qui fait qu’elle va s’adapter automatiquement à la forme de la bulle.</p>
+    
+    <p>Sur ces deux bulles. J’ai mis mes formes avec un contour rouge pour l’exemple, on voit que le texte s’est adapté tout seul comme un grand dans la forme, pratique !</p>
+    
+    <p>Et comme notre forme est dynamique, on peux la modifier même aprés coup pour bouger notre texte :</p>
+    
+    <img class="mx-auto w-1/2" src=" {{ asset('build/images/scantrad/clean/clean-plume-dynamique.webp') }}" alt="nettoyage-niveau-zero-bulle plume" loading="lazy">
+    
+    <p> Le soucis de la plume c’est que c’est relativement long à utiliser. Je vous recommande donc de ne l’utiliser que pour les bulles récalcitrantes.</p>
+    
+    <p>Le 1er gros souci que vous allez rencontrer c’est pour le texte flottant.</p>
+    
+    <p>Le niveau 1 du clean ne require que le minimum d’effort. Ainsi, la solution que certains utilise est de simplement recouvrir le texte de blanc, et basta.
+    On mettra le texte français par-dessus et on s’en lave les mains.</p>
+    
+    
+    <div class=" grid grid-cols-1 md:grid-cols-3 gap-4 justify-center items-center">
+        <div><img class="mx-auto" src=" {{ asset('build/images/scantrad/clean/zero-text-flottant-00.webp') }}" alt="nettoyage-niveau-zero-bulle plume" loading="lazy"></div>
+        <div><img class="mx-auto" src=" {{ asset('build/images/scantrad/clean/zero-text-flottant-01.webp') }}" alt="nettoyage-niveau-zero-bulle plume" loading="lazy"></div>
+        <div><img class="mx-auto" src=" {{ asset('build/images/scantrad/clean/zero-text-flottant-02.webp') }}" alt="nettoyage-niveau-zero-bulle plume" loading="lazy"></div>
+    </div>
+    
+    <h4 id="nettoyage-lvl1-bonus">Script Bonus</h4>
+    <p>
+        Script photoshop de la part de Nogitsune. Ce script permet d’automatiser partiellement le nettoyage des bulles classiques.
+    </p>
+    <div>
+        <a class="text-white px-4 py-1.5 bg-rose-600 rounded hover:bg-rose-800 transition not-prose" href="{{ asset('build/scripts/photoshop/Clean_kit.atn') }}">Télécharger</a>
+    </div>
+    <ol>
+        <li>Pour mettre le script sur Ps, il faut ouvrir photoshop, faire glisser et déposer sur votre fenêtre "Actions", si vous ne l’avez pas, allez sur "Fenêtre → Action"</li>
+        <li>Sélectionnez avec "Baguette Magique" les bulles de votre page</li>
+        <li>Lancez le script "Clean Bubble copie 2" à l’aide de la fenêtre "Actions" de Ps en cliquant sur le bouton "Play"</li>
+    </ol>
+    <h3 id="nettoyage-niveau-deux">Niveau 2</h3>
+    
+    <p>
+        Pour le niveau deux on va faire en sorte pour le texte flottant de masquer un peu le carnage. Assez pour que ça pique pas mais en allant vite.
+    </p>
+    
+    <p>
+        La solution la plus simple pour ça c’est d’utiliser l’inpainting. ça consiste a «faire deviner» à notre logiciel ce qui est sensé s’y trouver. <br>
+        Ne vous attendez pas des miracles. mais ça peut faire le taf.
+    </p>
+    
+    <ol>
+        <li>Sélectionnez avec la baguette magique votre texte.</li>
+        <li>Étendez ce texte pour qu’il inclue aussi le contour blanc de votre texte.</li>
+        <li>Lancer l’inpainting</li>
+    </ol>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-2 justify-center items-center text-center">
+        <div class="bg-slate-500 rounded p-2">
+            <img class="mx-auto" src=" {{ asset('build/images/scantrad/clean/inpainting/clean-inpainting-02-1.webp') }}" alt="nettoyage-niveau-zero-bulle plume" loading="lazy">
+            On sélectionne notre texte :
+            <img class="mx-auto" src=" {{ asset('build/images/scantrad/clean/inpainting/clean-inpainting-01.webp') }}" alt="nettoyage-niveau-zero-bulle plume" loading="lazy">
+        </div>
+        <div class="bg-slate-500 rounded p-2">
+            <img class="mx-auto" src=" {{ asset('build/images/scantrad/clean/inpainting/clean-inpainting-02.webp') }}" alt="nettoyage-niveau-zero-bulle plume" loading="lazy">
+            On étends la sélection :
+            <img class="mx-auto" src=" {{ asset('build/images/scantrad/clean/inpainting/clean-inpainting-03.webp') }}" alt="nettoyage-niveau-zero-bulle plume" loading="lazy">
+        </div>
+        <div class="bg-slate-500 rounded p-2">
+            <img class="mx-auto" src=" {{ asset('build/images/scantrad/clean/inpainting/clean-inpainting-04.webp') }}" alt="nettoyage-niveau-zero-bulle plume" loading="lazy">
+            Et on rempli en inpainting :
+            <img class="mx-auto" src=" {{ asset('build/images/scantrad/clean/inpainting/clean-inpainting-05.webp') }}" alt="nettoyage-niveau-zero-bulle plume" loading="lazy">
+        </div>
+    </div>
+    
+    <p><i>Suivant votre logiciel les menus peuvent être différent.</i></p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 justify-center items-center text-center mt-4 ">
+        <div> C’est rempli : <img class="mx-auto" src=" {{ asset('build/images/scantrad/clean/inpainting/clean-inpainting-06.webp') }}" alt="nettoyage-niveau-zero-bulle plume" loading="lazy"></div>
+        <div> Résultat Final : <img class="mx-auto" src=" {{ asset('build/images/scantrad/clean/inpainting/clean-inpainting-07.webp') }}" alt="nettoyage-niveau-zero-bulle plume" loading="lazy"></div>
+    </div>
+    
+    <p>On est d’accords, le résultat ne vend pas du rêve, mais suivant la qualité et le temps passé souhaité… ça peut être un bon compromis.</p>
+    
+    <h3 id="nettoyage-niveau-trois">Niveau 3</h3>
+    
+    <h3 id="nettoyage-niveau-quatre">Niveau 4</h3>
+    
 </div>

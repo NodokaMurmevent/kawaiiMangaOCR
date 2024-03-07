@@ -15,7 +15,8 @@ Encore
     //.setManifestKeyPrefix('build/')
 
     .copyFiles([    
-        {from: './assets/images', to: 'images/[path][name].[ext]'},        
+        {from: './assets/images', to: 'images/[path][name].[ext]'},
+        {from: './assets/script', to: 'scripts/photoshop/[path][name].[ext]'},
     ])
     /*
      * ENTRY CONFIG

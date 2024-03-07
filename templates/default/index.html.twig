@@ -7,7 +7,7 @@
     <div class="mb-4 text-lg text-center text-white uppercase">
     <span class="text-rose-400">Bienvenue sur le site</span> <span class="text-orange-400">d’un weeaboo LVL 32</span> <span class="text-fuchsia-400">qui a trop de temps à perdre</span> <span class="text-emerald-400">et qui fait des outils à moités cassés</span><span class="text-sky-400"> pour s’aider à traduire des Mangas.</span>
     </div>
-	<div class="flex flex-col gap-6 lg:items-start lg:justify-center lg:flex-row">
+	<div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start justify-center">
 		<div class="p-6 text-center rounded-md shadow bg-slate-700 text-slate-100">
 			<h2 class="mb-2 text-3xl font-light uppercase font-title text-slate-50">Traduction</h2>
 			<p class="mb-2">
@@ -41,9 +41,22 @@
 				</a>
 			</div>
 		</div>
-
-
+		
 		<div class="p-6 text-center rounded-md shadow bg-slate-700 text-slate-100">
+			<h2 class="mb-2 text-3xl font-light uppercase font-title text-slate-50">Tuto traduction manga (Scantrad)</h2>
+			<p class="mb-2">
+				Tuto en français pour les weebs qui veulent traduire des mangas et qui cherchent à ne pas faire de la merde.
+			</p>
+			<div  class="mt-4">
+				<a href="{{ path('app_scantrad_index') }}" class="inline-flex items-center px-5 py-3 text-lg font-medium text-white uppercase transition border border-transparent rounded-full shadow-sm bg-sky-400 hover:bg-sky-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500">
+					Le lire
+					<!-- Heroicon name: solid/mail -->
+					<span class="ml-2 -mr-1 w-7 h-7 iconify" data-icon="material-symbols-light:manga"></span>
+				</a>
+			</div>
+		</div>
+
+		{#<div class="p-6 text-center rounded-md shadow bg-slate-700 text-slate-100">
 			<h2 class="mb-2 text-3xl font-light uppercase font-title text-slate-50">Reconnaissance de texte</h2>
 			<p class="mb-2">
 				Outil permetant d’envoyer un ZIP conenant des images.<br/>
@@ -55,13 +68,13 @@
 				<a  href="/exemples/ocr.html" class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 border border-transparent rounded-md text-amber-700 bg-amber-100 hover:bg-amber-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500">Voir un exemple</a>
 			</div>
 			<div class="mt-4">
-				{#<a href="{{ path('ocr_index') }}" class="inline-flex items-center px-5 py-3 text-lg font-medium text-white uppercase transition bg-pink-400 border border-transparent rounded-full shadow-sm hover:bg-pink-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500">
+				<a href="{{ path('ocr_index') }}" class="inline-flex items-center px-5 py-3 text-lg font-medium text-white uppercase transition bg-pink-400 border border-transparent rounded-full shadow-sm hover:bg-pink-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500">
 					Extraire
 					<!-- Heroicon name: solid/mail -->
 					<span class="ml-2 -mr-1 w-7 h-7 iconify " data-icon="mdi:ocr"></span>
-				</a>#}
+				</a>
 				C‘EST PÉTÉ
 			</div>
-		</div>
+		</div>#}
 	</div>
 {% endblock %}
