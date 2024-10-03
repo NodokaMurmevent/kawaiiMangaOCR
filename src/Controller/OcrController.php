@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Form\ZipUploadType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 use \Knp\Snappy\Pdf;
 use Google\Cloud\Vision\V1\Feature\Type;
 use Google\Cloud\Vision\V1\ImageAnnotatorClient;
@@ -58,6 +58,7 @@ class OcrController extends AbstractController
             if ($extension != "zip") {
                 exit();
             }
+
             $uniqid = uniqid();     
             $file->move($path . "/public/uploads/", $uniqid. '.zip');
             return $this->redirectToRoute('ocr_request', ["fileName" => $uniqid,"extension" => $extension,"originalNameFile"=>$file->getClientOriginalName()]);
@@ -82,6 +83,7 @@ class OcrController extends AbstractController
         $filesystem = new Filesystem();
         $filesystem->remove($path . "/public/images/generated/");  
         $filesystem->mkdir($path . "/public/images/generated/");
+
         $zip = new ZipArchive;
         if ($zip->open($archiveZip) === TRUE) {
             $zip->extractTo($extractPath);
@@ -94,7 +96,7 @@ class OcrController extends AbstractController
         $credentials = json_decode($this->getParameter('app.google_credentials_file'), true);
         $client = new ImageAnnotatorClient(["credentials"=>$credentials]);
         $pagesResult = [];
-        
+
         $i=0;
         foreach ($finder as $file) {
 
@@ -150,7 +152,7 @@ class OcrController extends AbstractController
                     $imageFinale->write($path . "/public/impact.ttf", "Bloc N° " . $key, $coo["start"]["X"] - 2, $coo["start"]["Y"] + 12, 16, 0, "#FF0000", "right");
                     $imageFinale->rectangle($coo["start"]["X"], $coo["start"]["Y"], $coo["end"]["X"], $coo["end"]["Y"], "#FF0000");
                 }
-                
+
                 $imageFinalPath = $path . "/public/images/generated/0" . $i . "-" . $unidid . '.jpeg';
                 $imagePubilcFinalPath = "/images/generated/0" . $i . "-" . $unidid . '.jpeg';
 
@@ -159,6 +161,7 @@ class OcrController extends AbstractController
                 $pagesResult[$i]["publicPathImage"] = $imagePubilcFinalPath;
 
             }
+
             $i++;
         }
 
@@ -173,7 +176,7 @@ class OcrController extends AbstractController
         $localPath = $path . "/public". $publicPath;
         $nameFile = $uniqid;
         $url =  $publicPath . $nameFile;
-        
+
         $originalNameFileWithoutExtension = substr($originalNameFile, 0, strrpos($originalNameFile, "."));
         $contents = $this->renderView('ocr/result.html.twig', [
             'originalNameFile'=> $originalNameFileWithoutExtension,
@@ -184,7 +187,7 @@ class OcrController extends AbstractController
             'pages' => $pagesResult,
             "url" => $url
         ]);
-        
+
         $contentsTxt = $this->renderView('ocr/result.txt.twig', [         
             'pages' => $pagesResult,
         ]);       

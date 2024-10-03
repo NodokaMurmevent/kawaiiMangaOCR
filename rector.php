@@ -7,9 +7,9 @@ use Rector\Symfony\Set\SymfonySetList;
 
 return RectorConfig::configure()
     ->withPaths([__DIR__ . '/src'])
-    ->withPhpSets(php82: true)
-    ->withAttributesSets(symfony: true, doctrine: true, gedmo: true)
+    ->withAttributesSets(all: true)
     ->withSets([
+        SymfonySetList::SYMFONY_64,
         SymfonySetList::SYMFONY_71,
     ])
     ->withSymfonyContainerXml(__DIR__ . '/var/cache/dev/App_KernelDevDebugContainer.xml')
@@ -19,6 +19,7 @@ return RectorConfig::configure()
         codeQuality: true,
         codingStyle: true,
         typeDeclarations: true,
+        privatization: true,
         instanceOf: true,
         earlyReturn: true,
         strictBooleans: true,

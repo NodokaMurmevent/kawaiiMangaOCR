@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 use MatomoTracker;
 
 class StableController extends AbstractController
@@ -20,7 +20,7 @@ class StableController extends AbstractController
             $matomoToken = 'adf36114f2965ae516ac5cdd9e3a24e1';
 
             $matomoPageTitle = 'Another beginner guide to generate your local Waifu | Ni~ Coni CoNiiiiiifusion';
-            $matomoTracker = new MatomoTracker((int) $matomoSiteId, $matomoUrl);
+            $matomoTracker = new MatomoTracker($matomoSiteId, $matomoUrl);
             $matomoTracker->setTokenAuth($matomoToken);
             $matomoTracker->doTrackPageView($matomoPageTitle);
         }
